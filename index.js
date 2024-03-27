@@ -25,6 +25,9 @@ app.use('/home', tic_tac_toe)
 var adduserRouter = require('./routes/adduser/adduser');
 app.use('/home', adduserRouter)
 
+var listRouter = require('./routes/list/list');
+app.use('/home', listRouter)
+
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, (error) =>{ 
     if(!error) 
