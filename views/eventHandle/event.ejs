@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Testing</title>
+    <link rel="stylesheet" href="/eventHandle/Event.css">
+</head>
+<body onload="mymessage()">
+    
+        <div class="container">
+            <table style="width:100%">
+                <tr>
+                    <td>
+                      <h1>On Click Event</h1>  
+                    </td>
+                    <td>
+                        <div id="f1" onclick="myFunction_innerHtml()" style="background-color: aquamarine; width:auto;height:auto;padding:40px;">
+                            Click on this text!</div>
+                    </td>
+                    <td>
+                        <div id="f2" onclick="myFunction_Date()" style="background-color: rgb(155, 255, 127);width:auto;height:auto;padding:40px;">
+                            Click on this text!</div>
+                    </td>
+                    
+                </tr>
+                <tr>    
+                    <td>
+                       <h1>The onmouseover-out and onmousedown-up Events</h1>
+                    </td>
+                    <td>
+                        <div onmouseover="mOver(this)" onmouseout="mOut(this)" 
+style="background-color:#d9c438;width:auto;height:auto;padding:40px;">
+Mouse Over Me</div>
+
+                    </td>
+
+                    <td>
+                        <div onmousedown="mDown(this)" onmouseup="mUp(this)"
+style="background-color:#D94A38;width:auto;height:auto;padding:40px;">
+Click Me</div>
+
+                    </td>
+                </tr>
+                <tr>
+                  <td><h1>Video Event</h1></td>
+                  <td>
+                    <video id="myVideo" width="600" height="200" controls>   
+                        <source src="/eventHandle/event.mp4" type="video/mp4">  
+                        Your browser does not support the html video tag.  
+                      </video>  
+                  </td>
+                  <td></td>
+                </tr>
+                <tr>
+                    <td>
+                        <h1>Onkeydown-press-up</h1>
+                    </td>
+                    <td>
+                        <input type="text" onkeydown="myFunctionkeydown()">
+                        <p id="demo"></p>
+                    </td>
+                    <td>
+                        <input type="text" id="fname" onkeyup="myFunctionkeyup()">
+                        <p id="demo1"></p>
+                    </td>
+                </tr>
+              </table>
+        </div>
+ 
+   <script src="/eventHandle/Event.js">
+   </script>
+   
+</body>
+</html>

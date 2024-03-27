@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table Game</title>
+    <link rel="stylesheet" href="/koko/cube.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+</head>
+<body >
+    <div>
+        <button class="custom-btn btn-3"  type="button" id ="start" >Start</button>
+        <button class="custom-btn btn-14" type="button" id ="pause" onclick="clearInterval(stop)">Pause</button>
+    </div>
+        
+    <div style=" text-align: center;" >
+      <b><span id="demo" style="color: red;font-size:xx-large;"></span></b> 
+    </div>
+   
+    <div class="container">
+        <div class="box">
+            <table id="table_id">
+                <tr>
+                    <td id="one"></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td ></td>
+                    <td ></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <script src="/koko/cube.js"></script>
+</body>
+</html>
