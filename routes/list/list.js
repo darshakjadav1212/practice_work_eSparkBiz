@@ -10,7 +10,7 @@ const resultsPerPage = 40;
 
 router.get('/list', function(req, res) {
 
-  const sql = 'select * from users';
+  const sql = 'select * from students';
 
   db.query(sql,function (err, result, fields){
     if (err) throw err;
@@ -29,7 +29,7 @@ router.get('/list', function(req, res) {
 
 
     if (req.query.order == "ASC") {
-      sql1 = `SELECT * FROM users order by fname asc LIMIT ${resultsPerPage} offset ${startingLimit}`;
+      sql1 = `SELECT * FROM students order by fname asc LIMIT ${resultsPerPage} offset ${startingLimit}`;
       db.query(sql1, (err, result)=>{
         if(err) throw err;
         let iterator = (page - 5) < 1 ? 1 : page - 5;
@@ -43,7 +43,7 @@ router.get('/list', function(req, res) {
       
     }
     else if (req.query.order == "DESC") {
-      sql1 = `SELECT * FROM users  order by fname desc LIMIT ${resultsPerPage} offset ${startingLimit}`;
+      sql1 = `SELECT * FROM students  order by fname desc LIMIT ${resultsPerPage} offset ${startingLimit}`;
       db.query(sql1, (err, result)=>{
         if(err) throw err;
         let iterator = (page - 5) < 1 ? 1 : page - 5;
@@ -57,7 +57,7 @@ router.get('/list', function(req, res) {
     }
 
    else{
-    sql1 = `SELECT * FROM users LIMIT ${resultsPerPage} offset ${startingLimit}`;
+    sql1 = `SELECT * FROM students LIMIT ${resultsPerPage} offset ${startingLimit}`;
       db.query(sql1, (err, result)=>{
         if(err) throw err;
         let iterator = (page - 5) < 1 ? 1 : page - 5;

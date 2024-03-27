@@ -28,6 +28,16 @@ app.use('/home', adduserRouter)
 var listRouter = require('./routes/list/list');
 app.use('/home', listRouter)
 
+var attenRouter = require('./routes/attendence/atten');
+app.use('/home', attenRouter)
+
+var examRouter = require('./routes/exam/exam');
+app.use('/home', examRouter)
+
+
+var queryRouter = require('./routes/gridfetch/query');
+app.use('/home', queryRouter)
+
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, (error) =>{ 
     if(!error) 

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-color: rgb(204, 255, 246);
+        }
+        table,td{
+            border: 1px solid black;
+            border-collapse: collapse;
+            background-color: white;
+            padding: 50px;
+        }
+        th{
+            border: 1px solid white;
+            border-collapse: collapse;
+            background-color: black;
+            color: white;
+            padding: 30px;
+        }
+        .container{
+            display: flex;
+            justify-content: center;
+            margin-top: 100px;
+        }
+       
+       
+
+    </style>
+
+</head>
+<body>
+    <h1 style="text-align: center; background-color: antiquewhite; padding-top: 20px; padding-bottom: 20px;">
+        Final Result of 
+        <% for(var i=0; i<1; i++) { %>
+            <span><%=   result[i].name%></span>
+           <%} %> 
+    </h1>
+
+
+    <div class="container">
+        <table > 
+            <thead>
+             <tr>
+                 <th colspan="2">Prilimary Exam</th>
+                 <th colspan="2">Terminal Exam</th>
+                 <th colspan="2">Final Exam</th>
+                 <th rowspan="2">Total Average Marks</th>
+                 <th rowspan="2">Percentage</th>
+             </tr>
+             <tr>
+                <th> Theory Marks</th>
+                 <th>Practical Marks</th>
+                 <th>Theory Marks</th>
+                 <th>Practical Marks</th>
+                 <th>Theory Marks</th>
+                 <th>Practical Marks</th>
+             </tr>
+
+            </thead>
+            <tbody>
+                <tr>
+                    <% for(var i=0; i<result.length; i++) { %>
+                        <td><%=   result[i].ob_th %></td>
+                        <td><%=   result[i].ob_pr %></td>
+                       <%} %>
+                       <% for(var i=0; i<1; i++) { %>
+                           <td><%=   parseFloat(result[i].average).toFixed(0) %></td>
+                          <%} %>
+                          <% for(var i=0; i<1; i++) { %>
+                           <td><%=  parseFloat(result[i].percentage).toFixed(2) %></td>
+                          <%} %>  
+                </tr>
+                
+                       
+               </tbody>
+         </table>
+    </div>
+
+
+
+
+
+
+   
+</body>
+</html>

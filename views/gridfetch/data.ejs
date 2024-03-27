@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <table > 
+            <% for(let i of result){ %>
+                <tr>
+                <% let temp=Object.keys(i) %>
+                <% for(let j=0; j<temp.length;j++){ %>
+                    <th>
+                        <%=temp[j]%>
+                    </th>
+                    <% } %>
+                
+                <% break %>
+            </tr>
+                <% } %>
+               
+                <% for(let i of result){ %>
+                    <% let temp=Object.values(i) %>
+                    <!-- <%=temp %> -->
+        <tr>
+
+                        <% for(let j=0; j<temp.length;j++){ %>
+                            <td>
+                            <%=temp[j]%>
+                        </td>
+                            <% } %>
+                    </tr> 
+                    
+                    <% } %>
+         </table>
+    </div>
+
+    <div class="components">
+        <a href="/home/data?page=<%=1%>&query_fetch=<%= sql1 %>"><<</a> 
+      <% if(page > 1) { %> <a href="/home/data?page=<%=page-1%>&query_fetch=<%= sql1 %>"><</a> <% } else if(page==1) { %> 
+       <a href="/home/data?page=<%=1%>&query_fetch=<%= sql1 %>"><</a>
+       <% } %>
+
+      <% for(let i = iterator; i <= endingLink; i++) { %>
+       <% if(i === page) { %>
+       <a href="/home/data?page=<%=i%>&query_fetch=<%= sql1 %>"><%=i%></a>
+       <% continue; %>
+   <% } %>
+       <% } %>
+
+      <% if(page < numberOfPages) { %> <a href="/home/data?page=<%=page+1%>&query_fetch=<%= sql1 %>">></a> <% } else if(page==numberOfPages) { %>
+       <a href="/home/data?page=<%=numberOfPages%>&query_fetch=<%= sql1 %>">></a>
+       <% } %>
+      <a href="/home/data?page=<%=numberOfPages%>&query_fetch=<%= sql1 %>">>></a>
+</div>
+
+</body>
+
+</html>

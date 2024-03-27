@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students List</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-color: rgb(204, 255, 246);
+        }
+        table,td{
+            border: 1px solid black;
+            border-collapse: collapse;
+            background-color: white;
+        }
+        th{
+            border: 1px solid white;
+            border-collapse: collapse;
+            background-color: black;
+            color: white;
+        }
+        .container{
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+        }
+        .components{
+            text-align: center;
+            background-color: rgb(208, 250, 144);
+            width: 450px;
+            border: 1px solid pink;
+            text-emphasis-color: black;
+            margin: 30px auto;
+        }
+        a{
+            background-color: rgb(208, 250, 144);
+            font-size: 1.5em;
+            font-weight: 600;
+            padding-left: 15px;
+            padding-right: 15px;
+            color: black;
+            text-decoration: none;
+        }
+        .fetch{
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+        }
+
+    </style>
+</head>
+<body>
+ 
+    <h1 style="text-align: center; background-color: antiquewhite;">User Fetch!</h1>
+
+    <div class="fetch">
+        <form action="data" method="post">
+            Enter Your Query : <textarea name="query_fetch" id="query_fetch" cols="100" rows="1"></textarea>
+            <input type="submit" value="Fetch Data">
+        </form>
+    </div>
+
+    <%try{%>
+        <%- include('data.ejs') %>
+    <%}catch(err){}%>
+    
+    
+</body>
+</html>
+
+
+

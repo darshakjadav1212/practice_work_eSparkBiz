@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendence List</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-color: rgb(204, 255, 246);
+        }
+        table,td{
+            border: 1px solid black;
+            border-collapse: collapse;
+            background-color: white;
+            padding: 5px;
+        }
+        th{
+            border: 1px solid white;
+            border-collapse: collapse;
+            background-color: black;
+            color: white;
+            padding: 5px;
+        }
+        .container{
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+        .components{
+            text-align: center;
+            background-color: rgb(208, 250, 144);
+            width: 600px;
+            border: 1px solid pink;
+            text-emphasis-color: black;
+            margin: 30px auto;
+        }
+        a{
+            background-color: rgb(208, 250, 144);
+            font-size: 1.5em;
+            font-weight: 600;
+            padding-left: 15px;
+            padding-right: 15px;
+            color: black;
+            text-decoration: none;
+        }
+
+    </style>
+</head>
+<body>
+ 
+    <h1 style="text-align: center; background-color: antiquewhite;">Students Data List</h1>
+    <div class="container">
+        <table > 
+            <thead>
+             <tr>
+                <th>SID</th>
+                 <th>Name</th>
+                 <th>PRESENT_DAY</th>
+                 <th>Attendence</th>
+             </tr>
+            </thead>
+            <tbody>
+                <% result.forEach(entry => { %>
+                    <tr>
+                       <td><%= entry.id %></td>
+                       <td><%= entry.name %></td>
+                       <td><%= entry.presentDays %></td>
+                       <td><%= parseFloat(entry.percentage).toFixed(2) %>%</td>
+                    </tr>
+                    <%})%>
+               </tbody>
+         </table>
+    </div>
+
+    <div class="components">
+        <a href="/home/atten?page=<%=1%>&month=<%=month%>"><<</a> 
+      <% if(page > 1) { %> <a href="/home/atten?page=<%=page-1%>&month=<%=month%>"><</a> <% } else if(page==1) { %> 
+       <a href="/home/atten?page=<%=1%>&month=<%=month%>"><</a>
+       <% } %>
+
+      <% for(let i = iterator; i <= endingLink; i++) { %>
+       <% if(i === page) { %>
+       <a href="/home/atten?page=<%=i%>"><%=i%></a>
+       <% continue; %>
+   <% } %>
+       <% } %>
+
+      <% if(page < numberOfPages) { %> <a href="/home/atten?page=<%=page+1%>&month=<%=month%>">></a> <% } else if(page==numberOfPages) { %>
+       <a href="/home/atten?page=<%=numberOfPages%>&month=<%=month%>">></a>
+       <% } %>
+      <a href="/home/atten?page=<%=numberOfPages%>&month=<%=month%>">>></a> 
+
+     <b>Select Month :</b> <select name="set" id="set" onchange="funcMonth(event)">
+       
+        <option hidden><%=month%></option>
+        <option value="Dec 2023" >Dec 2023</option>
+        <option value="Jan 2024" >Jan 2024</option>
+        <option value="Feb 2024" >Feb 2024</option>
+      </select>
+
+</div>
+
+<script>
+    function funcMonth(event){
+        var month = event.target.value;
+        location = `/home/atten?page=<%= page %>&month=${month}`;
+    }
+</script>
+
+</body>
+</html>
