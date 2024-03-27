@@ -1,0 +1,57 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+	<title><%= title %></title>
+	<link rel="stylesheet" href="/adduser/adduser.css">
+</head> 
+
+<body> 
+	<h1> <%= heading %> </h1>
+	<div class="main">
+		<div class="photo">
+				<img src="/adduser/adduser.jpg" alt="sorry" height="800px" width="500px"> 
+		</div>
+		<div class="form_data">
+			<p style="color: red;">(* field are required)</p>
+			<form action="get_details" method="post">
+				<div class="field">
+					<span style="color: red;">*</span>First Name : <input type="text" name="first_name" id="first_name" required>
+				</div>
+				<div class="field">
+					<span style="color: red;">*</span>Last Name : <input type="text" name="last_name" id="last_name" required>
+				</div>
+				<div class="field">
+					<span style="color: red;">*</span>Age : <input type="text" name="age" id="age" required>
+				</div>
+				<div class="field">
+					<span style="color: red;">*</span>Mobile Number : <input type="text" name="mo_number" id="mo_number" required>
+				</div>
+				<div class="field">
+					<span style="color: red;">*</span>Email : <input type="text" name="email" id="email" required>
+				</div>
+				<div class="field">
+
+					<span style="color: red;">*</span>Male : <input type="radio" name="gender" value="Male" required>
+					<span style="color: red;">*</span>Female : <input type="radio" name="gender" value="Female" required>
+				</div>
+				<div class="field">
+					Hobbies :
+					<input type="checkbox" id="coding" name="hobbies" value="Coding">Coding
+					<input type="checkbox" id="gaming" name="hobbies" value="Gaming">Gaming
+					<input type="checkbox" id="singing" name="hobbies" value="Singing">Singing
+					<input type="checkbox" id="dancing" name="hobbies" value="Dancing">Dancing
+				</div>	
+				<div class="field">
+					Address : <textarea id="address" name="address" rows="1" cols="40"></textarea>
+				</div>
+				<div class="button">
+					<input type="submit" value="Add User">
+					<input type="reset" value="Reset">
+				</div>
+			</form>
+		</div>
+		
+	</div>
+
+</body> 
+</html>

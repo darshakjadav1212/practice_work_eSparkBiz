@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Main Details</title>
+
+</head>
+<body>
+    <h1>Student Main Details</h1>
+   
+        <table> 
+           <thead>
+            <tr>
+                <th>First Name</th>
+                <th>last Name</th>
+                <th>Email</th>
+                <th>Mobile Number</th>
+                <th>View All Details</th>
+            </tr>
+           </thead>
+           <tbody>
+            <% for(let i =0 ; i< main_data.length ; i++){ %>
+                <tr>
+                    <td> <p><%= main_data[i].first_name %></p></td>
+                    <td> <p><%= main_data[i].last_name %></p></td>
+                    <td> <p><%= main_data[i].email %></p></td>
+                    <td> <p><%= main_data[i].mo_number %></p></td>
+                    <td><div><a href="viewall/<%= main_data[i].id %>">View All Details</a></div></td>
+                </tr>
+                <%}%>
+           </tbody>
+            
+        </table>
+       
+       
+</body>
+</html>

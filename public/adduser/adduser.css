@@ -1,0 +1,34 @@
+body{
+    margin: 0;
+}
+h1{
+    text-align: center;
+}
+
+.main{
+    display: flex;
+    justify-content:center;
+    flex-wrap: nowrap;
+    margin-top: 10px;
+}
+.photo{
+    width: 800px;
+    height: 800px;
+    margin-top: 10px;
+    margin-left: 350px;
+}
+.form_data{
+    width: 800px;
+    height: 5   00px;
+    margin-top: 10px;
+    margin-left: 100px;
+    margin-right: 400px;
+    text-align: left;
+}
+
+.field{
+   margin-top: 50px;
+}
+.button{
+    margin-top: 70px;
+}
