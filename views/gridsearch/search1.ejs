@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students List</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-color: rgb(204, 255, 246);
+        }
+        table,td{
+            border: 1px solid black;
+            border-collapse: collapse;
+            background-color: white;
+        }
+        th{
+            border: 1px solid black;
+            border-collapse: collapse;
+            background-color:rgb(208, 250, 144);;
+            color: black;
+        
+        }
+        .container{
+            display: flex;
+            justify-content: center;
+            margin-top: 25px;
+        }
+        .components{
+            text-align: center;
+            background-color: rgb(208, 250, 144);
+            width: 450px;
+            border: 1px solid pink;
+            text-emphasis-color: black;
+           margin: 30px auto;
+        }
+       .components a{
+            background-color: rgb(208, 250, 144);
+            font-size: 1.5em;
+            font-weight: 600;
+            padding-left: 15px;
+            padding-right: 15px;
+            color: black;
+            text-decoration: none;
+        }
+
+        th>a{
+            font-size: 1.5em;
+        }
+        .input_id{
+            margin-top: 30px;
+            margin-left: 80px;
+        }
+        .hide{
+            margin-top: 30px;
+            display: flex;
+            justify-content: left;
+            flex-wrap: wrap;
+            margin-left: 80px;
+        }
+        .hide{
+            padding-right: 50px;
+        }
+        .btn{
+            margin-top: 25px;
+            margin-left: 80px;
+        }
+
+    </style>
+</head>
+<body>
+ 
+    <h1 style="text-align: center; background-color: antiquewhite;">Students Data List</h1>
+    <div class="input_id">
+        <form action="search" method="get">
+        ENTER USERID : <input type="text" name="sid" id="sid" tabindex="0" autofocus="autofocus">
+        <input type="submit" value="Go">
+        </form>
+    </div>
+
+    <div class="btn">
+        <button onclick="myFunction()">Show More</button>
+    </div>
+    
+    <div class="hide" id="hide">
+            <form action="hide" method="get">
+                <select name="check" id="check">
+                    <option value="OR">OR</option>
+                    <option value="AND">AND</option>
+                    <option value="" selected>--Select Value--</option>
+                  </select>
+                ENTER FirstName : <input type="text" name="fname" id="fname" >
+                ENTER LastName : <input type="text" name="lname" id="lname"  >
+                <input type="submit" value="Go">
+                </form>
+    </div>
+
+    </div>
+   
+    <div class="container">
+      
+        <table > 
+            <thead>
+                <tr>
+                   <th>ID<a href="/home/hide?col=id&order=asc&check=<%=searchTerm3%>&fname=<%= searchTerm1%>&lname=<%= searchTerm2%>">&#8593</a>
+                       <a href="/home/hide?col=id&order=desc&check=<%=searchTerm3%>&fname=<%= searchTerm1%>&lname=<%= searchTerm2%>">&#8595</a>
+                   </th>
+                   
+                   <th>First Name<a href="/home/hide?col=fname&order=asc&check=<%=searchTerm3%>&fname=<%= searchTerm1%>&lname=<%= searchTerm2%>">&#8593</a>
+                       <a href="/home/hide?col=fname&order=desc&check=<%=searchTerm3%>&fname=<%= searchTerm1%>&lname=<%= searchTerm2%>">&#8595</a>
+                   </th>
+                   <th>last Name<a href="/home/hide?col=lname&order=asc&check=<%=searchTerm3%>&fname=<%= searchTerm1%>&lname=<%= searchTerm2%>">&#8593</a>
+                       <a href="/home/hide?col=lname&order=desc&check=<%=searchTerm3%>&fname=<%= searchTerm1%>&lname=<%= searchTerm2%>">&#8595</a>
+                   </th>
+                    <th>Email<a href="/home/hide?col=email&order=asc&check=<%=searchTerm3%>&fname=<%= searchTerm1%>&lname=<%= searchTerm2%>">&#8593</a>
+                       <a href="/home/hide?col=email&order=desc&check=<%=searchTerm3%>&fname=<%= searchTerm1%>&lname=<%= searchTerm2%>">&#8595</a>
+                   </th>
+                    <th>Email 2<a href="/home/hide?col=email2&order=asc&check=<%=searchTerm3%>&fname=<%= searchTerm1%>&lname=<%= searchTerm2%>">&#8593</a>
+                       <a href="/home/hide?col=email2&order=desc&check=<%=searchTerm3%>&fname=<%= searchTerm1%>&lname=<%= searchTerm2%>">&#8595</a>
+                   </th>
+                    <th>City<a href="/home/hide?col=city&order=asc&check=<%=searchTerm3%>&fname=<%= searchTerm1%>&lname=<%= searchTerm2%>">&#8593</a>
+                       <a href="/home/hide?col=city&order=desc&check=<%=searchTerm3%>&fname=<%= searchTerm1%>&lname=<%= searchTerm2%>">&#8595</a>
+                   </th>
+                    <th>Address<a href="/home/hide?col=address&order=asc&check=<%=searchTerm3%>&fname=<%= searchTerm1%>&lname=<%= searchTerm2%>">&#8593</a>
+                       <a href="/home/hide?col=address&order=desc&check=<%=searchTerm3%>&fname=<%= searchTerm1%>&lname=<%= searchTerm2%>">&#8595</a>
+                   </th>
+                    <th>Country<a href="/home/hide?col=country&order=asc&check=<%=searchTerm3%>&fname=<%= searchTerm1%>&lname=<%= searchTerm2%>">&#8593</a>
+                       <a href="/home/hide?col=country&order=desc&check=<%=searchTerm3%>&fname=<%= searchTerm1%>&lname=<%= searchTerm2%>">&#8595</a>
+                   </th>
+                    <th>Country Code<a href="/home/hide?col=country_code&order=asc&check=<%=searchTerm3%>&fname=<%= searchTerm1%>&lname=<%= searchTerm2%>">&#8593</a>
+                       <a href="/home/hide?col=country_code&order=desc&check=<%=searchTerm3%>&fname=<%= searchTerm1%>&lname=<%= searchTerm2%>">&#8595</a>
+                   </th>
+                    <th>Birth Date<a href="/home/hide?col=birth_date&order=asc&check=<%=searchTerm3%>&fname=<%= searchTerm1%>&lname=<%= searchTerm2%>">&#8593</a>
+                       <a href="/home/hide?col=birth_date&order=desc&check=<%=searchTerm3%>&fname=<%= searchTerm1%>&lname=<%= searchTerm2%>">&#8595</a>
+                   </th>
+                    <th>created_at<a href="/home/hide?col=created_at&order=asc&check=<%=searchTerm3%>&fname=<%= searchTerm1%>&lname=<%= searchTerm2%>">&#8593</a>
+                       <a href="/home/hide?col=created_at&order=desc&check=<%=searchTerm3%>&fname=<%= searchTerm1%>&lname=<%= searchTerm2%>">&#8595</a>
+                   </th>
+                </tr>
+               </thead>
+            <tbody>
+            <% result.forEach(entry => { %>
+                 <tr>
+                    <td><%= entry.id %></td>
+                    <td><%= entry.fname %></td>
+                    <td><%= entry.lname %></td>
+                    <td><%= entry.email %></td>
+                    <td><%= entry.email2 %></td>
+                    <td><%= entry.city %></td>
+                    <td><%= entry.address %></td>
+                    <td><%= entry.country %></td>
+                    <td><%= entry.country_code %></td>
+                    <td><%= entry.birth_date %></td>
+                    <td><%= entry.created_at %></td>
+                 </tr>
+                 <%})%>
+            </tbody>
+         </table>
+        </div>
+
+        <div class="components">
+            <a href="/home/hide?page=<%=1%>&order=<%= sort%>&col=<%=coln%>&check=<%=searchTerm3%>&fname=<%= searchTerm1%>&lname=<%= searchTerm2%> "><<</a> 
+          <% if(page > 1) { %> <a href="/home/hide?page=<%=page-1%>&order=<%= sort%>&col=<%=coln%>&check=<%=searchTerm3%>&fname=<%= searchTerm1%>&lname=<%= searchTerm2%> "><</a> <% } else if(page==1) { %> 
+           <a href="/home/hide?page=<%=1%>&order=<%= sort%>&col=<%=coln%>&check=<%=searchTerm3%>&fname=<%= searchTerm1%>&lname=<%= searchTerm2%> "><</a>
+           <% } %>
+   
+          <% for(let i = iterator; i <= endingLink; i++) { %>
+           <% if(i === page) { %>
+           <a href="/home/hide?page=<%=i%>&check=<%=searchTerm3%>&fname=<%= searchTerm1%>&lname=<%= searchTerm2%>"><%=i%></a>
+           <% continue; %>
+       <% } %>
+           <% } %>
+   
+          <% if(page < numberOfPages) { %> <a href="/home/hide?page=<%=page+1%>&order=<%= sort%>&col=<%=coln%>&check=<%=searchTerm3%>&fname=<%= searchTerm1%>&lname=<%= searchTerm2%> ">></a> <% } else if(page==numberOfPages) { %>
+           <a href="/home/hide?page=<%=numberOfPages%>&order=<%= sort%>&col=<%=coln%>&check=<%=searchTerm3%>&fname=<%= searchTerm1%>&lname=<%= searchTerm2%> ">></a>
+           <% } %>
+          <a href="/home/hide?page=<%=numberOfPages%>&order=<%= sort%>&col=<%=coln%>&check=<%=searchTerm3%>&fname=<%= searchTerm1%>&lname=<%= searchTerm2%> ">>></a> 
+   
+       </div>
+
+
+
+    <script>
+    var x = document.getElementById("hide");
+    var y = document.querySelector("button");
+    y.innerHTML = "Show More";
+    x.style.display = "none";
+    function myFunction() {
+   var  x = document.getElementById("hide");
+    var y = document.querySelector("button");
+   if (x.style.display === "none") {
+    y.innerHTML = "Hide";
+    x.style.display = "block";
+   } else {
+    y.innerHTML = "Show More";
+    x.style.display = "none";
+   }
+}
+
+   
+    </script>
+    
+</body>
+</html>

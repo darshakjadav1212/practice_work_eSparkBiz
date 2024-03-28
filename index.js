@@ -41,8 +41,8 @@ app.use('/home', queryRouter)
 var gridascRouter = require('./routes/gridasc/st_list');
 app.use('/home', gridascRouter)
 
-// var gridsearchRouter = require('./routes/gridasc/st_list');
-// app.use('/home', gridsearchRouter)
+var gridsearchRouter = require('./routes/gridsearch/search');
+app.use('/home', gridsearchRouter)
 
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, (error) =>{ 
