@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JOB APPLICATION FORM</title>
+    <link rel="stylesheet" href="/ajaxform/form.css">
+  </head>
+
+  <body >
+    
+    <div style="text-align: center">
+      <h1><b>Job Application Form</b></h1>
+    </div>
+
+    <div class="btn">
+        <span id="0" class="spanstyle active">Basic Details</span>
+        <span id="1" class="spanstyle">Education Details</span>
+        <span id="2" class="spanstyle">Work Experience</span>
+        <span id="3" class="spanstyle">Languages Known</span>
+        <span id="4" class="spanstyle">Technologies Known</span>
+        <span id="5" class="spanstyle">References</span>
+        <span id="6" class="spanstyle">Preferences</span>
+    </div>
+
+    <!-- <form action="/create" method="post" id="form1" name="form1" onsubmit="return validateForm()"> -->
+        
+        <span id="vipp" style="margin-left: 130px; ">( <span id="vip">*</span> Fields are required )</span>
+        
+        <div class="page active" id="basic_details">
+            <div id="error"></div>
+
+        <fieldset >
+          <legend><b>Basic Details</b></legend>
+          <br />
+          <div class="f1">
+            <table>
+              <tr>
+                <td><span>*</span><label for="first_name">First Name</label>
+                  <input type="text" name="first_name" id="first_name" placeholder="Enter your First Name" required/></td>
+                <td><span>*</span><label for="last_name">Last Name</label>
+                  <input type="text" name="last_name" id="last_name" placeholder="Enter your Last Name" required/></td>
+              </tr>
+              <tr>
+                <td>
+                  <span>*</span><label for="deg1">Designation</label>
+                  <input type="text" name="deg1" id="deg1" placeholder="Enter your Designation" required/>
+                </td>
+                <td><label for="address_1">Address_1 </label>
+                  <textarea name="address_1" id="address_1" ></textarea></td>
+              </tr>
+              <tr>
+                <td><span>*</span><label for="email">Email </label>
+                  <input type="text" name="email" id="email" placeholder="Enter your Email"  required/></td>
+                <td><label for="address_2">Address 2  </label>
+                  <textarea name="address_2" id="address_2"></textarea></td>
+              </tr>
+              <tr>
+                <td><span>*</span><label for="phone_number">Phone Number </label>
+                  <input type="text" name="phone_no" id="phone_number" placeholder="Enter your Phone Number" required/></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td><label for="city">city </label> 
+                  <input type="text" name="city" id="city" placeholder="Enter your City"/></td>
+              </tr>
+              <tr>
+                <td>
+                  <span>*</span>Gender &nbsp;&nbsp;&nbsp;&nbsp; 
+                  <label for="male">Male </label>   
+                  <input type="radio" name="gender" id="male" value="male" required />
+                  &nbsp;  <label for="female">Female </label> 
+                  <input type="radio" name="gender" id="female" value="female" required/>
+                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>
+                  <label for="state"> State</label>  
+                  <select name="state" id="state">
+                    <option value="">
+                      -----------Select State--------------
+                    </option>
+                    <option value="Andhra Pradesh">Andhra Pradesh</option>
+                    <option value="Andaman and Nicobar Islands">
+                      Andaman and Nicobar Islands
+                    </option>
+                    <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                    <option value="Assam">Assam</option>
+                    <option value="Bihar">Bihar</option>
+                    <option value="Chandigarh">Chandigarh</option>
+                    <option value="Chhattisgarh">Chhattisgarh</option>
+                    <option value="Dadar and Nagar Haveli">
+                      Dadar and Nagar Haveli
+                    </option>
+                    <option value="Daman and Diu">Daman and Diu</option>
+                    <option value="Delhi">Delhi</option>
+                    <option value="Lakshadweep">Lakshadweep</option>
+                    <option value="Puducherry">Puducherry</option>
+                    <option value="Goa">Goa</option>
+                    <option value="Gujarat">Gujarat</option>
+                    <option value="Haryana">Haryana</option>
+                    <option value="Himachal Pradesh">Himachal Pradesh</option>
+                    <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                    <option value="Jharkhand">Jharkhand</option>
+                    <option value="Karnataka">Karnataka</option>
+                    <option value="Kerala">Kerala</option>
+                    <option value="Madhya Pradesh">Madhya Pradesh</option>
+                    <option value="Maharashtra">Maharashtra</option>
+                    <option value="Manipur">Manipur</option>
+                    <option value="Meghalaya">Meghalaya</option>
+                    <option value="Mizoram">Mizoram</option>
+                    <option value="Nagaland">Nagaland</option>
+                    <option value="Odisha">Odisha</option>
+                    <option value="Punjab">Punjab</option>
+                    <option value="Rajasthan">Rajasthan</option>
+                    <option value="Sikkim">Sikkim</option>
+                    <option value="Tamil Nadu">Tamil Nadu</option>
+                    <option value="Telangana">Telangana</option>
+                    <option value="Tripura">Tripura</option>
+                    <option value="Uttar Pradesh">Uttar Pradesh</option>
+                    <option value="Uttarakhand">Uttarakhand</option>
+                    <option value="West Bengal">West Bengal</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label for="relationship"> Realtionship Status </label>
+                  <select name="relationship_status" id="relationship" required>
+                    <option value="">----Select you Status----</option>
+                    <option value="married">Married</option>
+                    <option value="unmarried">unmarried</option>
+                  </select>
+                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>
+                  <label for="zip_code"> Zip Code </label>
+                  <input type="text" name="zip_code" id="zip_code" placeholder="Enter your Zip code" />
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span>*</span><label for="date_of_birth"> Date of Birth </label> 
+                  <input type="text" name="date_of_birth" id="date_of_birth" placeholder="YYYY-MM-DD" />
+                </td>
+              </tr>
+            </table>
+            <br />
+          </div>
+        </fieldset>
+        <div class="apply">
+          <button id="next1" class="press">Next</button>
+        </div>
+        </div>
+
+    
+
+      <div class="page" id="education_details">
+        <div id="error1"></div>
+        <fieldset>
+          <legend><b>Education Details</b></legend>
+          <br />
+          &nbsp;SSC Result<br /><br />
+          <table>
+            <tr>
+              <td>
+                <span>*</span><label for="ssc_name">Name of Board </label> 
+                <input type="text" name="ssc_name" id="ssc_name" placeholder="SSC board"/>
+              </td>
+              <td>
+                <span>*</span><label for="ssc_passing_year"> Passing Year</label>
+                <input type="text" name="ssc_passing_year" id="ssc_passing_year" placeholder="YYYY"/>
+              </td>
+
+              <td>
+                <span>*</span><label for="ssc_percentage"> Percentage</label>
+                <input type="text" name="ssc_percentage" id="ssc_percentage" placeholder="00.00" />
+              </td>
+            </tr>
+          </table>
+          <br />
+          <hr />
+          <br />
+          &nbsp;HSC/Diploma Result<br /><br />
+          <table>
+            <tr>
+              <td>
+                <span>*</span><label for="hsc_name">Name of Board </label> 
+                <input type="text" name="hsc_name" id="hsc_name" placeholder="HSC board"/>
+              </td>
+
+              <td>
+                <span>*</span><label for="hsc_passing_year"> Passing Year</label>
+                <input type="text" name="hsc_passing_year" id="hsc_passing_year" placeholder="YYYY"/>
+              </td>
+
+              <td>
+                <span>*</span><label for="hsc_percentage"> Percentage</label>
+                <input type="text" name="hsc_percentage" id="hsc_percentage" placeholder="00.00"/>
+              </td>
+            </tr>
+          </table>
+          <br />
+          <hr />
+          <br />
+          &nbsp;Bechlor Degree<br /><br />
+          <table>
+            <tr>
+              <td>
+                <span>*</span><label for="b_course_name">Course Name</label>
+                <input type="text" name="b_course_name" id="b_course_name" />
+              </td>
+
+              <td>
+                <span>*</span><label for="b_university">University</label>
+                <input type="text" name="b_university" id="b_university" />
+              </td>
+
+              <td>
+                <span>*</span><label for="b_passing_year">Passing Year</label>
+                <input type="text" name="b_passing_year" id="b_passing_year" placeholder="YYYY" />
+              </td>
+
+              <td>
+                <span>*</span><label for="b_percentage">Percentage</label>
+                <input type="text" name="b_percentage" id="b_percentage" placeholder="00.00"/>
+              </td>
+            </tr>
+          </table>
+          <br />
+          <hr />
+          <br />
+          &nbsp;Master Degree<br /><br />
+          <table>
+            <tr>
+              <td>
+                <label for="m_course_name">Course Name</label>
+                <input type="text" name="m_course_name" id="m_course_name" />
+              </td>
+
+              <td>
+                <label for="m_university">University</label> 
+                <input type="text" name="m_university" id="m_university" />
+              </td>
+
+              <td>
+                <label for="m_passing_year">Passing Year</label>
+                <input type="text" name="m_passing_year" id="m_passing_year" placeholder="YYYY"/>
+              </td>
+
+              <td>
+                <label for="m_percentage">Percentage</label>
+                <input type="text" name="m_percentage" id="m_percentage" placeholder="00.00"/>
+              </td>
+            </tr>
+          </table>
+          <br />
+          <br />
+        </fieldset>
+        <div class="apply">
+          <button id="prev2" class="press1">Prev</button>
+          <button id="next2" class="press">Next</button>
+        </div>
+      </div>
+
+
+      <div class="page" id="work_experience">
+        <fieldset>
+          <legend><b>Work Experience</b></legend>
+          <br />
+          <table>
+            <tr>
+              <td>
+                <label for="company_name">Company Name</label>
+                <input type="text" name="company_name" id="company_name" />
+              </td>
+
+              <td>
+                <label for="deg2">Designation</label>
+                <input type="text" name="deg2" id="deg2" />
+              </td>
+
+              <td>
+                <label for="from">From</label>
+                <input type="text" name="from_date" id="from" placeholder="YYYY-MM-DD"/>
+              </td>
+
+              <td>
+                <label for="to">To</label>
+                <input type="text" name="to_date" id="to" placeholder="YYYY-MM-DD" />
+              </td>
+            </tr>
+          </table>
+          <br />
+        </fieldset>
+        <div class="apply">
+          <button id="prev3" class="press1">Prev</button>
+          <button id="next3" class="press">Next</button>
+        </div>
+      </div>
+
+   
+
+    <div class="page" id="language">
+                <fieldset>
+                  <legend><b>Language Known</b></legend>
+                  <br />
+                  <table>
+                    <tr>
+                      <td>
+                        <input type="checkbox" name="hindi" id="hindi" value="hindi" />
+                        <label for="hindi">Hindi</label>
+                      </td>
+
+                      <td>
+                        <input type="checkbox" name="hindiread" id="hindiread" class="hindi" value="read" />
+                        <label for="read"> read</label>
+                      </td>
+
+                      <td>
+                        <input type="checkbox" name="hindiwrite" id="hindiwrite" class="hindi" value="write"/>
+                        <label for="write">write</label> 
+                      </td>
+
+                      <td>
+                        <input type="checkbox" name="hindispeak" id="hindispeak" class="hindi" value="speak" />
+                        <label for="speak">speak</label>
+                      </td>
+                    </tr>
+                  </table>
+                  <br />
+                  <table>
+                    <tr>
+                      <td>
+                        <input
+                          type="checkbox"
+                          name="english"
+                          id="english"
+                          value="english"
+                        />
+                        <label for="english">English</label>  
+                      </td>
+
+                      <td>
+                        <input type="checkbox" name="englishread" id="englishread" class="english" value="read" /><label for="read" > read</label>
+                      </td>
+
+                      <td>
+                        <input type="checkbox" name="englishwrite" id="englishwrite" class="english" value="write"/><label for="write">write</label> 
+                      </td>
+
+                      <td> 
+                        <input type="checkbox" name="englishspeak" id="englishspeak" class="english" value="speak"/> <label for="speak">speak</label>
+                      </td>
+                    </tr>
+                  </table>
+                  <br />
+                  <table>
+                    <tr>
+                      <td>
+                        <input
+                          type="checkbox"
+                          name="gujrati"
+                          id="gujrati"
+                          value="gujrati"
+                        />
+                        <label for="gujrati">Gujrati</label>
+                      </td>
+
+                      <td>
+                        <input type="checkbox" name="gujratiread" id="gujratiread" class="gujrati" value="read"/><label for="gujrati"> read</label>
+                      </td>
+
+                      <td>
+                        <input type="checkbox" name="gujratiwrite" id="gujratiwrite" class="gujrati" value="write" /><label for="gujrati">write</label> 
+                      </td>
+
+                      <td>
+                        <input type="checkbox" name="gujratispeak" id="gujratispeak" class="gujrati" value="speak"/><label for="gujrati">speak</label>
+                      </td>
+                    </tr>
+                  </table>
+                </fieldset>
+                <div class="apply">
+                  <button id="prev4" class="press1">Prev</button>
+                  <button id="next4" class="press">Next</button>
+                </div>
+              </div>
+
+
+
+        <div class="page" id="technology">
+              <fieldset>
+                <legend><b>Technology you know</b></legend>
+                <table>
+                  <tr>
+                    <td><input type="checkbox" name="php" id="php" value="php"/><label for="php">PHP</label></td>
+
+                    <td>
+                      <input
+                        type="radio"
+                        name="phplevel"
+                        id="phplevel"
+                        class="phplevel"
+                        value="beginner"
+                      /><label for="phplevel">Beginner</label>
+                    </td>
+
+                    <td>
+                      <input
+                        type="radio"
+                        name="phplevel"
+                        id="phplevel"
+                        value="mideator"
+                        class="phplevel"
+                      /><label for="phplevel">Mideator</label>
+                    </td>
+
+                    <td>
+                      <input type="radio" name="phplevel" id="phplevel" class="phplevel" value="expert"/><label for="phplevel">Expert</label>
+                    </td>
+                  </tr>
+                </table>
+                <br />
+                <table>
+                  <tr>
+                    <td>
+                      <input type="checkbox" name="mysql" id="mysql" value="mysql" />
+                      <label for="mysql">Mysql</label>
+                    </td>
+
+                    </td>
+
+                    <td>
+                        <input
+                        type="radio"
+                        name="mysqllevel"
+                        id="mysqllevel"
+                        class="mysqllevel"
+                        value="beginner"
+                      /><label for="beginner">Beginner</label>
+                    </td>
+
+                    <td>
+                        <input
+                        type="radio"
+                        name="mysqllevel"
+                        id="mysqllevel"
+                        value="mideator"
+                        class="mysqllevel"
+                      /><label for="mideator">Mideator</label>
+                    </td>
+
+                    <td>
+                        <input type="radio" name="mysqllevel" class="mysqllevel" id="mysqllevel" value="expert"/>
+                      <label for="expert">Expert</label>
+                    </td>
+                  </tr>
+                </table>
+                <br />
+                <table>
+                  <tr>
+                    <td>
+                      <input
+                        type="checkbox"
+                        name="laravel"
+                        id="laravel"
+                        value="laravel"
+                      /><label for="laravel">Laravel</label>
+                    </td>
+
+                    <td>
+                      <input
+                        type="radio"
+                        name="laravellevel"
+                        id="laravellevel"
+                        class="laravellevel"
+                        value="beginner"
+                      /><label for="beginner">Beginner</label>
+                    </td>
+
+                    <td>
+                      <input
+                        type="radio"
+                        name="laravellevel"
+                        id="laravellevel"
+                        class="laravellevel"
+                        value="mideator"
+                      /><label for="mideator">Mideator</label>
+                    </td>
+
+                    <td>
+                      <input type="radio" name="laravellevel"  class="laravellevel" id="laravellevel" value="expert" /><label for="expert">Expert</label>
+                    </td>
+                  </tr>
+                </table>
+                <br />
+                <table>
+                  <tr>
+                    <td>
+                      <input type="checkbox" name="oracle" id="oracle" value="oracle" /><label for="oracle">Oracle</label>
+                    </td>
+
+                    <td>
+                      <input
+                        type="radio"
+                        name="oraclelevel"
+                        id="oraclelevel"
+                        class="oraclelevel"
+                        value="beginner"
+                      /><label for="beginner">Beginner</label>
+                    </td>
+
+                    <td>
+                      <input
+                        type="radio"
+                        name="oraclelevel"
+                        id="oraclelevel"
+                        class="oraclelevel"
+                        value="mideator"
+                      /><label for="mideator">Mideator</label>
+                    </td>
+                    <td>
+                      <input type="radio" name="oraclelevel" class="oraclelevel" id="oraclelevel" value="expert"/><label for="expert">Expert</label>
+                    </td>
+                  </tr>
+                </table>
+              </fieldset>
+              <div class="apply">
+                <button id="prev5" class="press1">Prev</button>
+                <button id="next5" class="press">Next</button>
+              </div>
+            </div>
+       
+
+
+      <div class="page" id="references">
+        <fieldset>
+          <legend><b>Reference Contact</b></legend>
+          <br /><br />
+          <table>
+            <tr>
+              <td><label for="name">  Name</label>  <input type="text" name="ref_name" id="ref_name"  placeholder="Person Name" /></td>
+
+              <td>
+                <label for="contact_number"> Contact Number</label> 
+                <input type="text" name="ref_contact_no" id="ref_contact_no"/>
+              </td>
+
+              <td>
+                <label for="relation">  Relation </label> <input type="text" name="relation" id="relation" placeholder="Relation with Person" />
+              </td>
+            </tr>
+          </table>
+          
+          <br /><br />
+        </fieldset>
+        <div class="apply">
+          <button id="prev6" class="press1">Prev</button>
+          <button id="next6" class="press">Next</button>
+        </div>
+      </div>
+
+
+
+      <div class="page" id="preferences">
+        <div id="error2"></div>
+        <fieldset>
+          <legend><b>Preferences</b></legend>
+          <br />
+          <table>
+            <tr>
+              <td>
+                <span>*</span><label for="locpreference_locationation"> Prefered Location input</label>  
+                <select name="preference_location" id="preference_location">
+                  <option value="">----Select----</option>
+                  <option value="Ahmedabad">Ahmedabad</option>
+                  <option value="Surat">Surat</option>
+                  <option value="Vadodara">Vadodara</option>
+                </select>
+              </td>
+
+              <td>
+                <table>
+                  <tr>
+                    <td>
+                      <span>*</span><label for="notice_period"> Notice Period</label>  
+                      <input type="text" name="notice_period" id="notice_period" />
+                    </td>
+                  </tr>
+                </table>
+                <br />
+                <table>
+                  <tr>
+                    <td>
+                      <span>*</span><label for="current_ctc"> Current CTC</label> 
+                        <input type="text" name="current_ctc" id="current_ctc" />
+                    </td>
+                  </tr>
+                </table>
+                <br />
+                <table>
+                  <tr>
+                    
+                    <td>
+                      <span>*</span><label for="exp_ctc"> Expected CTC</label> 
+                      <input type="text" name="expected_ctc" id="exp_ctc" />
+                    </td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <label for="department">Department</label> 
+                <span>*</span><select name="department" id="department">
+                  <option value="">----Select----</option>
+                  <option value="Design">Design</option>
+                  <option value="Marketing">Marketing</option>
+                  <option value="Developing">Developing</option>
+                </select>
+              </td>
+            </tr>
+          </table>
+        </fieldset>
+        <div class="apply">
+          <button id="prev7" class="press1">Prev</button>
+          <button id="next7" class="press">Save</button>
+        </div>
+      </div>
+
+      <!-- <div class="apply">
+        <input type="submit" value="Apply" class="press"/>
+      </div> -->
+
+    </form>
+  <script src="/ajaxform/validation.js"></script>
+  <script src="/ajaxform/design.js"></script>
+    </body>
+    </html>
+    
