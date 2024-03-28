@@ -17,14 +17,14 @@ router.get('/adduser', (req, res)=>{
 }); 
 
 router.post('/get_details', (req, res)=>{ 
-        var file_data = require('./student_data.json');
+        var file_data = require('../../data/student_data.json');
         var data = req.body;
         var sid = Math.floor(Math.random()*1000+1);
         
         if (Object.keys(data).length == 8) {
             data.id = sid;
             file_data.push(data)
-            fs.appendFile('./student_data.json',JSON.stringify(file_data), function (err) {
+            fs.writeFile('./data/student_data.json',JSON.stringify(file_data), function (err) {
                 if (err) throw err;
                 console.log('Saved!');
               });
@@ -41,7 +41,7 @@ router.post('/get_details', (req, res)=>{
 
 router.get('/viewall/:id', (req, res)=>{
     try{
-    var users = require('./student_data.json');
+    var users = require('../../data/student_data.json');
     let id  =req.params.id;
     let isValid = false;
     let data ;
