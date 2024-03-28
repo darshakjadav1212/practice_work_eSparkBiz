@@ -44,6 +44,9 @@ app.use('/home', gridascRouter)
 var gridsearchRouter = require('./routes/gridsearch/search');
 app.use('/home', gridsearchRouter)
 
+var delimRouter = require('./routes/delim/delim');
+app.use('/home', delimRouter)
+
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, (error) =>{ 
     if(!error) 
