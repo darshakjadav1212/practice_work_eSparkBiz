@@ -1,11 +1,21 @@
 const express  = require('express');
 const app = express();
+const cookieParser = require("cookie-parser")
 
-const  dotenv = require('dotenv');
-let result = dotenv.config();
+require("dotenv").config()
+// require('dotenv');
+// let result = dotenv.config();
+
+// Server Allowances
 
 app.set('view engine', 'ejs');
+app.use(express.json())
+app.use(express.urlencoded({extended:true}))
 app.use(express.static(__dirname+"/public"));
+app.use(cookieParser())
+
+var loginRouter = require('./routes/login/register');
+app.use('/', loginRouter);
 
 var homeRouter = require('./routes/home/home');
 app.use('/', homeRouter);

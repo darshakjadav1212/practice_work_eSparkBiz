@@ -3,6 +3,7 @@ const router = express.Router();
 const db = require("../../db");
 const notifier = require("node-notifier");
 var url = require('url');
+const verifyUser = require("../../middleware/authentication");
 
 // Middleware to parse request bodies
 router.use(express.json()); // for parsing application/json
@@ -10,11 +11,11 @@ router.use(express.urlencoded({ extended: true })); // for parsing application/x
 
 const resultsPerPage = 20;
 
-router.get("/delim", function (req, res) {
+router.get("/delim",verifyUser, function (req, res) {
   res.render("delim/form");
 });
 
-router.get("/delim1", (req, res) => {
+router.get("/delim1",verifyUser, (req, res) => {
   
     let searchTerm = req.query.sid;
 

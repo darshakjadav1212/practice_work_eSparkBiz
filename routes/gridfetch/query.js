@@ -1,20 +1,19 @@
 const express = require('express');
 const router = express.Router();
 const db = require('../../db');
+const verifyUser = require("../../middleware/authentication");
 
 // Middleware to parse request bodies
 router.use(express.json()); // for parsing application/json
 router.use(express.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 
-
-
-router.get('/gridfetch', function(req, res) {
+router.get('/gridfetch',verifyUser, function(req, res) {
   res.render('gridfetch/query');
 });
 
 const resultsPerPage = 20;
 
-router.all('/data', function(req, res) {
+router.all('/data',verifyUser, function(req, res) {
     let sql
 
     if (req.body.query_fetch) {

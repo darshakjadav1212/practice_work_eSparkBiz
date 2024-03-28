@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const db = require('../../db');
+const verifyUser = require("../../middleware/authentication");
 
 // Middleware to parse request bodies
 router.use(express.json()); // for parsing application/json
@@ -8,7 +9,7 @@ router.use(express.urlencoded({ extended: true })); // for parsing application/x
 
 const resultsPerPage = 20;
 
-router.get('/exam', function(req, res) {
+router.get('/exam',verifyUser, function(req, res) {
 
     const sql = "select s.sid as id,s.name as name,a.ob_th as ob_th,a.ob_pr as ob_pr FROM users as s LEFT JOIN exam as a ON s.sid = a.sid where a.exam_type = 1 "; 
     db.query(sql,function (err, result, fields){
@@ -46,7 +47,7 @@ router.get('/exam', function(req, res) {
 });
 
 
-router.get('/result', function(req, res) {
+router.get('/result',verifyUser, function(req, res) {
 
         var id = req.query.id;
  

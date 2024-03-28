@@ -1,0 +1,61 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    background-color: rgb(247, 247, 247);
+}
+
+h1{
+    text-align: center;
+    
+}
+.section{
+   display: flex;
+   justify-content: center;
+   border: 1px solid black;
+   margin: 0 720px;
+  background-color: rgb(252, 252, 224);
+}
+.sec{
+    padding: 20px;
+}
+
+.apply{
+    padding: 20px;
+}
+#apply{
+    padding: 5px 10px;
+    background-color: black;
+    color: greenyellow;
+    border: 1px solid greenyellow;
+    border-radius: 5px;
+}
+#apply:hover{
+    background-color: white;
+    color: rgb(240, 0, 0);
+    border: 1px solid rgb(240,0,0);
+}
+span{
+    color: red;
+}
+
+.warning{
+    margin: 0 720px;
+}
+
+.signup{
+    margin:20px 800px;   
+}
+.signup a{
+    padding: 6px;
+    background-color: black;
+    color: greenyellow;
+    border: 1px solid greenyellow;
+    border-radius: 5px;
+    font-size: 0.9em;
+    text-decoration: none;
+}
+.signup a:hover{
+    background-color: white;
+    color: rgb(240, 0, 0);
+    border: 1px solid rgb(240,0,0);
+}

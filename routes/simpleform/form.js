@@ -4,16 +4,17 @@ const router = express.Router();
 const db = require('../../db');
 const notifier = require('node-notifier');
 var bodyParser = require('body-parser');
+const verifyUser = require("../../middleware/authentication");
 
 // Middleware to parse request bodies
 router.use(express.json()); // for parsing application/json
 router.use(express.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 
-router.get('/simpleform', function(req, res, next) {
+router.get('/simpleform',verifyUser, function(req, res, next) {
   res.render('simpleform/form'); // Assuming you have a template engine for rendering
 });
 
-router.post('/create', function(req, res) {
+router.post('/create',verifyUser, function(req, res) {
     //basic details
     const first_name = req.body.first_name || "";
     const last_name = req.body.last_name || "";
@@ -274,7 +275,7 @@ const sql6 = `INSERT INTO
 
   });
 
-  router.get('/update/:id', function(req, res, next) {
+  router.get('/update/:id',verifyUser, function(req, res, next) {
 
     var id = req.params.id;
   
@@ -312,7 +313,7 @@ const sql6 = `INSERT INTO
    ; // Assuming you have a template engine for rendering
   });
   
-  router.post('/finalupdate', function(req, res, next) {
+  router.post('/finalupdate',verifyUser, function(req, res, next) {
     var id = req.body.id;
     
     const first_name = req.body.first_name || "";

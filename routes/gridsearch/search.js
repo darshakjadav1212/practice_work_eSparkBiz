@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const db = require("../../db");
 const notifier = require("node-notifier");
+const verifyUser = require("../../middleware/authentication");
 
 // Middleware to parse request bodies
 router.use(express.json()); // for parsing application/json
@@ -9,11 +10,11 @@ router.use(express.urlencoded({ extended: true })); // for parsing application/x
 
 const resultsPerPage = 20;
 
-router.get("/gridsearch", function (req, res) {
+router.get("/gridsearch",verifyUser, function (req, res) {
   res.render("gridsearch/form");
 });
 
-router.get("/search", (req, res) => {
+router.get("/search",verifyUser, (req, res) => {
   const searchTerm = req.query.sid;
 
   if (!searchTerm) {
@@ -39,7 +40,7 @@ router.get("/search", (req, res) => {
 });
 
 
-router.get("/hide", (req, res) => {
+router.get("/hide",verifyUser, (req, res) => {
   var coln = req.query.col;
   var sort = req.query.order;
 

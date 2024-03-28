@@ -4,12 +4,13 @@ const router = express.Router();
 const db = require('../../db');
 const notifier = require('node-notifier');
 var bodyParser = require('body-parser');
+const verifyUser = require("../../middleware/authentication");
 
 // Middleware to parse request bodies
 router.use(express.json()); // for parsing application/json
 router.use(express.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 
-router.get('/ajaxform', function(req, res, next) {
+router.get('/ajaxform',verifyUser, function(req, res, next) {
   res.render('ajaxform/form'); // Assuming you have a template engine for rendering
 });
 

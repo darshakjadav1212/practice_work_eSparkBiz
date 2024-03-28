@@ -1,14 +1,16 @@
 const express = require('express');
 const router = express.Router();
 const db = require('../../db');
+const verifyUser = require("../../middleware/authentication");
 
 // Middleware to parse request bodies
 router.use(express.json()); // for parsing application/json
 router.use(express.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 
+
 const resultsPerPage = 20;
 
-router.get('/atten', function(req, res) {
+router.get('/atten',verifyUser, function(req, res) {
 
     const sql = `select s.sid as id,s.name as name,count(*) as presentDays,((count(*)/90)*100)
      as percentage FROM users as s LEFT JOIN attendence as a ON s.sid = a.sid where attendence_status = 

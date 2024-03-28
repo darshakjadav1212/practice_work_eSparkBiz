@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+   <link rel="stylesheet" href="/login/design.css">
+</head>
+<body>
+    <h1>Login</h1>
+    <div class="warning">
+        <p>( <span>*</span> Fields are required )</p>
+    </div>
+    <div class="section">
+        <form action="/login" method="post">
+            <div class="sec">
+                <span>*</span><label for="email">Email : </label>
+                <input type="text" name="email" id="email" autofocus required>
+            </div>
+            <div class="sec">
+                <span>*</span><label for="password">Password : </label>
+                <input type="password" name="password" id="password" required>
+            </div>
+            <div class="apply">
+                <input type="submit" id="apply" value="Login">
+            </div>
+        </form>
+    </div>
+    <div class="signup">
+        <a href="/signup">Sign Up</a>
+    </div>
+</body>
+<script src="/login/design.js"></script>
+</html>

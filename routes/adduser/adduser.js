@@ -2,11 +2,12 @@ const express = require('express');
 const router = express.Router();
 const fs = require('fs');
 const bodyParser = require('body-parser');
+const verifyUser = require("../../middleware/authentication");
 
 
 router.use(bodyParser.urlencoded({extended:false}));
 
-router.get('/adduser', (req, res)=>{ 
+router.get('/adduser',verifyUser, (req, res)=>{ 
     res.status(200); 
     const data = {
         title: 'Add User',
@@ -16,7 +17,7 @@ router.get('/adduser', (req, res)=>{
     
 }); 
 
-router.post('/get_details', (req, res)=>{ 
+router.post('/get_details',verifyUser, (req, res)=>{ 
         var file_data = require('../../data/student_data.json');
         var data = req.body;
         var sid = Math.floor(Math.random()*1000+1);
@@ -39,7 +40,7 @@ router.post('/get_details', (req, res)=>{
       
 }); 
 
-router.get('/viewall/:id', (req, res)=>{
+router.get('/viewall/:id',verifyUser, (req, res)=>{
     try{
     var users = require('../../data/student_data.json');
     let id  =req.params.id;

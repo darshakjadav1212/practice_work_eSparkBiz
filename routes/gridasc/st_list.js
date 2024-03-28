@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const db = require('../../db');
+const verifyUser = require("../../middleware/authentication");
 
 // Middleware to parse request bodies
 router.use(express.json()); // for parsing application/json
@@ -8,7 +9,7 @@ router.use(express.urlencoded({ extended: true })); // for parsing application/x
 
 const resultsPerPage = 40;
 
-router.get('/gridasc', function(req, res) {
+router.get('/gridasc',verifyUser, function(req, res) {
   var coln = req.query.col;
   var sort = req.query.order;
   console.log(coln);
