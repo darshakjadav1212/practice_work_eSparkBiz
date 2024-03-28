@@ -1,5 +1,11 @@
+body{
+    background-color: rgb(244, 238, 239);
+}
+
 h1{
     text-align: center;
+    color: green;
+    margin-top: -35px;
 }
 
 .main{
@@ -8,7 +14,33 @@ h1{
 }
 
 table,th,td{
-    border: 1px solid black;
+    border: 3px solid black;
     border-collapse: collapse;
     padding: 15px;
+    background-color: rgb(250, 250, 199);
+    color: black;
+    font-weight: 600;
+}
+.logout{
+    margin-top: 30px;
+    display: flex;
+    justify-content:flex-end;
+    padding-right: 200px;
+   
+}
+
+.logout a{
+    padding: 10px 20px; 
+    border: 1px solid yellowgreen;
+    text-decoration: none;
+    background-color: black;
+    color: yellowgreen;
+    border-radius: 10px;
+    font-weight: 600;
+}
+
+.logout a:hover{
+    color: red;
+    border-color: red;
+    background-color: white;
 }

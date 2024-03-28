@@ -12,7 +12,7 @@ h1{
    display: flex;
    justify-content: center;
    border: 1px solid black;
-   margin: 0 720px;
+   margin: 0 800px;
   background-color: rgb(252, 252, 224);
 }
 .sec{
@@ -39,11 +39,11 @@ span{
 }
 
 .warning{
-    margin: 0 720px;
+    margin: 0 800px;
 }
 
 .signup{
-    margin:20px 800px;   
+    margin:20px 880px;   
 }
 .signup a{
     padding: 6px;
