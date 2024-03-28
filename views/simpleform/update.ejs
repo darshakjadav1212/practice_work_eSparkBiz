@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JOB APPLICATION FORM</title>
+<style>
+    .f1{
+    padding: 15px;
+}
+span{
+      color: red;
+    }
+    #error,#error1,#error2,#vip{
+      color: red;
+    }
+    #vipp{
+      color:rgb(2, 92, 127);
+    }
+
+</style>
+  </head>
+  <body >
+    <div style="text-align: center">
+      <h1><b>Update - Job Application Form</b></h1>
+    </div>
+    <form action="/home/finalupdate" method="post" name="form1" onsubmit="return validateForm()">
+       <div class="hiddeinId">
+        <input type="hidden" name="id"  value="<%= id %>">
+       </div>
+      <div>
+        <span id="vipp">( <span id="vip">*</span> Fields are required )</span>
+        <div id="error"></div>
+        <fieldset >
+          <legend><b>Basic Details</b></legend>
+          <br />
+          <div class="f1">
+            <table>
+              <tr>
+                <td><span>*</span><label for="first_name">First Name</label>
+                  <input type="text" name="first_name" id="first_name " placeholder="Enter your First Name" value="<%=employee_details[0].first_name %>" /></td>
+                <td><span>*</span><label for="last_name">Last Name</label>
+                  <input type="text" name="last_name" id="last_name" placeholder="Enter your Last Name" value="<%=employee_details[0].last_name %>"/></td>
+              </tr>
+              <tr>
+                <td>
+                  <span>*</span><label for="deg1">Designation</label>
+                  <input type="text" name="deg1" id="deg1" placeholder="Enter your Designation" value="<%=employee_details[0].deg1 %>"/>
+                </td>
+                <td><label for="address_1">Address_1 </label>
+                    <input type="text" name="address_1" id="address_1" value = "<%=employee_details[0].address1 %>"></td>
+              </tr>
+              <tr>
+                <td><span>*</span><label for="email">Email </label>
+                  <input type="text" name="email" id="email" placeholder="Enter your Email"   value="<%=employee_details[0].email%>"/></td>
+                <td><label for="address_2">Address 2  </label>
+                    <input type="text" name="address_2" id="address_2" value = "<%=employee_details[0].address2 %>"></td>
+              </tr>
+              <tr>
+                <td><span>*</span><label for="phone_number">Phone Number </label>
+                  <input type="text" name="phone_no" id="phone_number" placeholder="Enter your Phone Number" value = "<%=employee_details[0].phone_no %>"/></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td><label for="city">city </label> 
+                  <input type="text" name="city" id="city" placeholder="Enter your City" value = "<%=employee_details[0].city %>"/></td>
+              </tr>
+              <tr>
+                <td>
+                 Gender &nbsp;&nbsp;&nbsp;&nbsp; 
+                  <label for="male">Male </label>   
+                  <input type="radio" name="gender" id="male" value="male"   <%=employee_details[0].gender == 'male' ? 'checked' : ''%>/>
+                  &nbsp;  <label for="female">Female </label> 
+                  <input type="radio" name="gender" id="female" value="female"   <%=employee_details[0].gender == 'female' ? 'checked' : ''%>/>
+                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>
+                  <label for="state"> State</label>  
+                  <select name="state" id="state">
+                    <option value="">
+                      -----------Select State--------------
+                    </option>
+                    <option value="Andhra Pradesh" <%= employee_details[0].state == 'Andhra Pradesh' ? 'selected' : ''%>>Andhra Pradesh</option>
+                    <option value="Andaman and Nicobar Islands" <%= employee_details[0].state == 'Andaman and Nicobar Islands' ? 'selected' : ''%>>
+                      Andaman and Nicobar Islands
+                    </option>
+                    <option value="Gujarat" <%= employee_details[0].state == 'Gujarat' ? 'selected' : ''%>>
+                      Gujarat
+                    </option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label for="relationship"> Realtionship Status </label>
+                  <select name="relationship_status" id="relationship" >
+                    <option value="">----Select you Status----</option>
+                    <option value="married" <%= employee_details[0].relationship_status == 'married' ? 'selected' : ''%>>Married</option>
+                    <option value="unmarried" <%= employee_details[0].relationship_status == 'unmarried' ? 'selected' : ''%>>unmarried</option>
+                  </select>
+                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>
+                  <label for="zip_code"> Zip Code </label>
+                  <input type="text" name="zip_code" id="zip_code" placeholder="Enter your Zip code" value = "<%=employee_details[0].zip_code %>" />
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <!-- <label>Input Date (YYYY-MM-DD):
+                    <input type="text" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" />
+                    </label> -->
+
+                    <span>*</span><label for="date_of_birth"> Date of Birth </label> 
+                  <input type="text" name="date_of_birth" id="date_of_birth" placeholder="YYYY-MM-DD" value = "<%=employee_details[0].date_of_birth %>"/>
+                </td>
+              </tr>
+            </table>
+            <br />
+          </div>
+        </fieldset>
+      </div>
+      <br />
+      <div>
+        <div id="error1"></div>
+        <fieldset>
+          <legend><b>Education Details</b></legend>
+          <br />
+          &nbsp;SSC Result<br /><br />
+          <table>
+            <tr>
+              <td>
+                <span>*</span><label for="ssc_name">Name of Board </label> 
+                <input type="text" name="ssc_name" id="ssc_name" placeholder="SSC board" value = "<%=employee_school[0].ssc_name %>"/>
+              </td>
+              <td>
+                <span>*</span><label for="ssc_passing_year"> Passing Year</label>
+                <input type="text" name="ssc_passing_year" id="ssc_passing_year" placeholder="YYYY" value = "<%=employee_school[0].ssc_passing_year %>"/>
+              </td>
+
+              <td>
+                <span>*</span><label for="ssc_percentage"> Percentage</label>
+                <input type="text" name="ssc_percentage" id="ssc_percentage" placeholder="00.00" value = "<%=employee_school[0].ssc_percentage %>" />
+              </td>
+            </tr>
+          </table>
+          <br />
+          <hr />
+          <br />
+          &nbsp;HSC/Diploma Result<br /><br />
+          <table>
+            <tr>
+              <td>
+                <span>*</span><label for="hsc_name">Name of Board </label> 
+                <input type="text" name="hsc_name" id="hsc_name" placeholder="HSC board" value = "<%=employee_school[0].hsc_name %>"/>
+              </td>
+
+              <td>
+                <span>*</span><label for="hsc_passing_year"> Passing Year</label>
+                <input type="text" name="hsc_passing_year" id="hsc_passing_year" placeholder="YYYY" value = "<%=employee_school[0].hsc_passing_year %>"/>
+              </td>
+
+              <td>
+                <span>*</span><label for="hsc_percentage"> Percentage</label>
+                <input type="text" name="hsc_percentage" id="hsc_percentage" placeholder="00.00" value = "<%=employee_school[0].hsc_percentage %>"/>
+              </td>
+            </tr>
+          </table>
+          <br />
+          <hr />
+          <br />
+          &nbsp;Bechlor Degree<br /><br />
+          <table>
+            <tr>
+              <td>
+                <span>*</span><label for="b_course_name">Course Name</label>
+                <input type="text" name="b_course_name" id="courseb_course_name_name" value = "<%=employee_college[0].b_course_name %>"/>
+              </td>
+
+              <td>
+                <span>*</span><label for="b_university">University</label>
+                <input type="text" name="b_university" id="b_university" value = "<%=employee_college[0].b_university %>" />
+              </td>
+
+              <td>
+                <span>*</span><label for="b_passing_year">Passing Year</label>
+                <input type="text" name="b_passing_year" id="b_passing_year" placeholder="YYYY" value = "<%=employee_college[0].b_passing_year %>" />
+              </td>
+
+              <td>
+                <span>*</span><label for="b_percentage">Percentage</label>
+                <input type="text" name="b_percentage" id="b_percentage" placeholder="00.00" value = "<%=employee_college[0].b_percentage %>"/>
+              </td>
+            </tr>
+          </table>
+          <br />
+          <hr />
+          <br />
+          &nbsp;Master Degree<br /><br />
+          <table>
+            <tr>
+              <td>
+                <label for="m_course_name">Course Name</label>
+                <input type="text" name="m_course_name" id="m_course_name" value = "<%=employee_college[0].m_course_name %>"/>
+              </td>
+
+              <td>
+                <label for="m_university">University</label> 
+                <input type="text" name="m_university" id="m_university" value = "<%=employee_college[0].m_university %>"/>
+              </td>
+
+              <td>
+                <label for="m_passing_year">Passing Year</label>
+                <input type="text" name="m_passing_year" id="m_passing_year" placeholder="YYYY" value = "<%=employee_college[0].m_passing_year %>"/>
+              </td>
+
+              <td>
+                <label for="m_percentage">Percentage</label>
+                <input type="text" name="m_percentage" id="m_percentage" placeholder="00.00" value = "<%=employee_college[0].m_percentage %>"/>
+              </td>
+            </tr>
+          </table>
+          <br />
+          <br />
+        </fieldset>
+      </div>
+      <br />
+      <div>
+        <fieldset>
+          <legend><b>Work Experience</b></legend>
+          <br />
+          <table>
+            <tr>
+              <td>
+                <label for="company_name">Company Name</label>
+                <input type="text" name="company_name" id="company_name"  value = "<%=work_experience[0].company_name %>"/>
+              </td>
+
+              <td>
+                <label for="deg2">Designation</label>
+                <input type="text" name="deg2" id="deg2" value = "<%=work_experience[0].deg2 %>"/>
+              </td>
+
+              <td>
+                <label for="from">From</label>
+                <input type="text" name="from_date" id="from" placeholder="YYYY-MM-DD" value = "<%=work_experience[0].from_date %>" />
+              </td>
+
+              <td>
+                <label for="to">To</label>
+                <input type="text" name="to_date" id="to" placeholder="YYYY-MM-DD" value = "<%=work_experience[0].to_date %>"/>
+              </td>
+            </tr>
+          </table>
+          <br /><br /><br />
+          <table>
+            <tr>
+              <td>
+                <label for="company_name">Company Name</label>
+                <input type="text" name="company_name" id="company_name"  value = "<%=work_experience[1].company_name %>"/>
+              </td>
+
+              <td>
+                <label for="deg2">Designation</label>
+                <input type="text" name="deg2" id="deg2" value = "<%=work_experience[1].deg2 %>"/>
+              </td>
+
+              <td>
+                <label for="from">From</label>
+                <input type="text" name="from_date" id="from" placeholder="YYYY-MM-DD" value = "<%=work_experience[1].from_date %>" />
+              </td>
+
+              <td>
+                <label for="to">To</label>
+                <input type="text" name="to_date" id="to" placeholder="YYYY-MM-DD" value = "<%=work_experience[1].to_date %>"/>
+              </td>
+            </tr>
+          </table>
+          <br /><br /><br />
+          <table>
+            <tr>
+              <td>
+                <label for="company_name">Company Name</label>
+                <input type="text" name="company_name" id="company_name"  value = "<%=work_experience[2].company_name %>"/>
+              </td>
+
+              <td>
+                <label for="deg2">Designation</label>
+                <input type="text" name="deg2" id="deg2" value = "<%=work_experience[2].deg2 %>"/>
+              </td>
+
+              <td>
+                <label for="from">From</label>
+                <input type="text" name="from_date" id="from" placeholder="YYYY-MM-DD" value = "<%=work_experience[2].from_date %>" />
+              </td>
+
+              <td>
+                <label for="to">To</label>
+                <input type="text" name="to_date" id="to" placeholder="YYYY-MM-DD" value = "<%=work_experience[2].to_date %>"/>
+              </td>
+            </tr>
+          </table>
+          <br /><br />
+        </fieldset>
+      </div>
+      <br />
+      <div>
+        <table>
+          <tr>
+            <td>
+              <div>
+                <fieldset>
+                  <legend><b>Language Known</b></legend>
+                  <br />
+                  <table>
+                   
+                    <tr>
+                      <td>
+                        <input type="checkbox" name="hindi" id="hindi" value="hindi" class="hindi"/>
+                        <label for="hindi">Hindi</label>
+                      </td>
+
+                      <td>
+                        <input type="checkbox" name="hindiread" id="read"  value="read" class="hindi" />
+                        <label for="read"> read</label>
+                      </td>
+
+                      <td>
+                        <input type="checkbox" name="hindiwrite" id="write" value="write" class="hindi"/>
+                        <label for="write">write</label> 
+                      </td>
+
+                      <td>
+                        <input type="checkbox" name="hindispeak" id="speak" value="speak" class="hindi"/>
+                        <label for="speak">speak</label>
+                      </td>
+                    </tr>
+                    
+                  </table>
+                  <br />
+                  <table>
+                  
+                    <tr>
+                      <td>
+                        <input
+                          type="checkbox"
+                          name="english"
+                          id="english"
+                          value="english"
+                          class="english"
+                        />
+                        <label for="english" >English</label>  
+                      </td>
+
+                      <td>
+                        <input type="checkbox" name="englishread" id="read"  value="read" class="english" /><label for="read"  > read</label>
+                      </td>
+
+                      <td>
+                        <input type="checkbox" name="englishwrite" id="write"  value="write" class="english" /><label for="write" >write</label> 
+                      </td>
+
+                      <td> 
+                        <input type="checkbox" name="englishspeak" id="speak" value="speak" class="english" /> <label for="speak" >speak</label>
+                      </td>
+                    </tr>
+                   
+                    
+                  </table>
+                  <br />
+                  <table>
+                   
+                    <tr>
+                      <td>
+                        <input
+                          type="checkbox"
+                          name="gujrati"
+                          id="gujrati"
+                          value="gujrati"
+                          class="gujrati"
+                        />
+                        <label for="gujrati">Gujrati</label>
+                      </td>
+
+                      <td>
+                        <input type="checkbox" name="gujratiread" id="read"  value="read" class="gujrati" /><label for="gujrati" > read</label>
+                      </td>
+
+                      <td>
+                        <input type="checkbox" name="gujratiwrite" id="write" value="write"  class="gujrati"/><label for="gujrati" >write</label> 
+                      </td>
+
+                      <td>
+                        <input type="checkbox" name="gujratispeak" id="speak" value="speak" class="gujrati"/><label for="gujrati" >speak</label>
+                      </td>
+                    </tr>
+                    
+                  </table>
+                </fieldset>
+              </div>
+            </td>
+            <td>
+              <fieldset>
+                <legend><b>Technology you know</b></legend>
+                <table>
+                  <tr>
+                    <td><input type="checkbox" name="php" id="php" value="php" class="php"><label for="php">PHP</label></td>
+
+                    <td>
+                      <input
+                        type="radio"
+                        name="phplevel"
+                        id="beginner"
+                        value="beginner" class="php"
+                      /><label for="beginner">Beginner</label>
+                    </td>
+
+                    <td>
+                      <input
+                        type="radio"
+                        name="phplevel"
+                        id="mideator"
+                        value="mideator" class="php"
+                      /><label for="mideator">Mideator</label>
+                    </td>
+
+                    <td>
+                      <input type="radio" name="phplevel" id="expert" value="expert" class="php"><label for="expert">Expert</label>
+                    </td>
+                  </tr>
+                </table>
+                <br />
+                <table>
+                  <tr>
+                    <td>
+                      <input type="checkbox" name="mysql" id="mysql" value="mysql" class="mysql" >
+                      <label for="mysql">Mysql</label>
+                    </td>
+
+                    </td>
+
+                    <td>
+                        <input
+                        type="radio"
+                        name="mysqllevel"
+                        id="beginner"
+                        value="beginner" class="mysql"
+                      /><label for="beginner">Beginner</label>
+                    </td>
+
+                    <td>
+                        <input
+                        type="radio"
+                        name="mysqllevel"
+                        id="mideator"
+                        value="mideator" class="mysql"
+                      /><label for="mideator">Mideator</label>
+                    </td>
+
+                    <td>
+                        <input type="radio" name="mysqllevel" id="expert" value="expert" class="mysql"/>
+                      <label for="expert">Expert</label>
+                    </td>
+                  </tr>
+                </table>
+                <br />
+                <table>
+                  <tr>
+                    <td>
+                      <input
+                        type="checkbox"
+                        name="laravel"
+                        id="laravel"
+                        value="laravel" class="laravel"
+                      /><label for="laravel">Laravel</label>
+                    </td>
+
+                    <td>
+                      <input
+                        type="radio"
+                        name="laravellevel"
+                        id="beginner"
+                        value="beginner" class="laravel"
+                      /><label for="beginner">Beginner</label>
+                    </td>
+
+                    <td>
+                      <input
+                        type="radio"
+                        name="laravellevel"
+                        id="mideator"
+                        value="mideator" class="laravel"
+                      /><label for="mideator">Mideator</label>
+                    </td>
+
+                    <td>
+                      <input type="radio" name="laravellevel" id="expert" value="expert" class="laravel"/><label for="expert">Expert</label>
+                    </td>
+                  </tr>
+                </table>
+                <br />
+                <table>
+                  <tr>
+                    <td>
+                      <input type="checkbox" name="oracle" id="oracle" value="oracle" class="oracle" /><label for="oracle">Oracle</label>
+                    </td>
+
+                    <td>
+                      <input
+                        type="radio"
+                        name="oraclelevel"
+                        id="beginner"
+                        value="beginner" class="oracle"
+                      /><label for="beginner">Beginner</label>
+                    </td>
+
+                    <td>
+                      <input
+                        type="radio"
+                        name="oraclelevel"
+                        id="mideator"
+                        value="mideator" class="oracle"
+                      /><label for="mideator">Mideator</label>
+                    </td>
+                    <td>
+                      <input type="radio" name="oraclelevel" id="expert" value="expert" class="oracle"/><label for="expert">Expert</label>
+                    </td>
+                  </tr>
+                </table>
+              </fieldset>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <br />
+      <div>
+        <fieldset>
+          <legend><b>Reference Contact</b></legend>
+          <br /><br />
+          <table>
+            <tr>
+              <td><label for="name">  Name</label>  <input type="text" name="ref_name" id="name"  placeholder="Person Name" value="<%=ref_contact[0].ref_name %>"/></td>
+
+              <td>
+                <label for="contact_number"> Contact Number</label> 
+                <input type="text" name="ref_contact_no" id="contact_number" value="<%=ref_contact[0].ref_contact_no %>"/>
+              </td>
+
+              <td>
+                <label for="relation">  Relation </label> <input type="text" name="relation" id="relation" placeholder="Relation with Person" value="<%=ref_contact[0].relation %>"/>
+              </td>
+            </tr>
+          </table>
+          <br /><br />
+          <table>
+            <tr>
+              <td><label for="name">  Name</label> 
+                <input type="text" name="ref_name" id="name" placeholder="Person Name" value="<%=ref_contact[1].ref_name %>"/></td>
+
+              <td>
+                <label for="contact_number"> Contact Number</label> 
+                <input type="text" name="ref_contact_no" id="contact_number"  value="<%=ref_contact[1].ref_contact_no %>"/>
+              </td>
+
+              <td>
+                <label for="relation">  Relation </label>
+                <input type="text" name="relation" id="relation" placeholder="Relation with Person" value="<%=ref_contact[1].relation %>"/>
+              </td>
+            </tr>
+          </table>
+          <br /><br />
+        </fieldset>
+      </div>
+      <br />
+      <div>
+        <div id="error2"></div>
+        <fieldset>
+          <legend><b>Preferences</b></legend>
+          <br />
+          <table>
+            <tr>
+              <td>
+                <span>*</span><label for="location"> Prefered Location input</label>  
+                <select name="preference_location" id="location">
+                  <option value="">----Select----</option>
+                  <option value="Ahmedabad"  <%= preferences[0].preference_location == 'Ahmedabad' ? 'selected' : ''%>>Ahmedabad</option>
+                  <option value="Surat" <%= preferences[0].preference_location == 'Surat' ? 'selected' : ''%>>Surat</option>
+                  <option value="Vadodara" <%= preferences[0].preference_location == 'Vadodara' ? 'selected' : ''%>>Vadodara</option>
+                </select>
+              </td>
+
+              <td>
+                <table>
+                  <tr>
+                    <td>
+                      <span>*</span><label for="notice"> Notice Period</label>  
+                      <input type="text" name="notice_period" id="notice" value="<%=preferences[0].notice_period %>"/>
+                    </td>
+                  </tr>
+                </table>
+                <br />
+                <table>
+                  <tr>
+                    <td>
+                      <span>*</span><label for="current_ctc"> Current CTC</label> 
+                        <input type="text" name="current_ctc" id="current_ctc" value="<%=preferences[0].current_ctc %>"/>
+                    </td>
+                  </tr>
+                </table>
+                <br />
+                <table>
+                  <tr>
+                    
+                    <td>
+                      <span>*</span><label for="exp_ctc"> Expected CTC</label> 
+                      <input type="text" name="expected_ctc" id="exp_ctc" value="<%=preferences[0].expected_ctc %>"/>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <label for="department">Department</label> 
+                <span>*</span><select name="department" id="department">
+                  <option value="">----Select----</option>
+                  <option value="Design" <%= preferences[0].department  == 'Design' ? 'selected' : ''%>>Design</option>
+                  <option value="Marketing" <%= preferences[0].department  == 'Marketing' ? 'selected' : ''%>>Marketing</option>
+                  <option value="Developing" <%= preferences[0].department  == 'Developing' ? 'selected' : ''%>>Developing</option>
+                </select>
+              </td>
+            </tr>
+          </table>
+        </fieldset>
+      </div>
+      <br />
+      <div>
+        <input type="submit" value="Update Form"/>
+      </div>
+    </form>
+
+  <script>
+
+    let language_temp='<%-JSON.stringify(language)%>'
+    let language=JSON.parse(language_temp)
+    language.map((element_main)=>{
+      [...document.querySelectorAll(`.${element_main.lan1}`)].map((element)=>{
+        console.log("language:"+element.value);
+       
+        if(element_main.lan1==element.value){
+          element.checked=true
+        }
+
+        if(element_main.redo==element.value){
+          element.checked=true
+        }
+
+        if(element_main.wedo==element.value){
+          element.checked=true
+        }
+
+        if(element_main.sedo==element.value){
+          element.checked=true
+        }
+      })
+      console.log("\n");
+    })
+
+
+    let technology_temp='<%-JSON.stringify(technology)%>'
+    let technology=JSON.parse(technology_temp)
+    
+    technology.map((element_main)=>{
+      [...document.querySelectorAll(`.${element_main.language}`)].map((element)=>{
+        console.log("tech :"+element_main.language);
+
+        if(element_main.language==element.value){
+          element.checked=true
+        }
+
+
+       
+        if(element_main.level==element.value){
+          element.checked=true
+        }
+        
+      })
+      console.log("\n");
+      
+    })
+
+    function validateForm(){
+      var fnameVal = document.form1.first_name.value;
+      var lnameVal = document.form1.last_name.value;
+      var desginationVal = document.form1.deg1.value;
+      var emailVal = document.form1.email.value;
+      var phoneVal = document.form1.phone_no.value;
+      var date_of_birthVal = document.form1.date_of_birth.value;
+      var ssc_nameVal = document.form1.ssc_name.value;
+      var ssc_passing_yearVal = document.form1.ssc_passing_year.value;
+      var ssc_percentageVal = document.form1.ssc_percentage.value;
+      var hsc_nameVal = document.form1.hsc_name.value;
+      var hsc_passing_yearVal = document.form1.hsc_passing_year.value;
+      var hsc_percentageVal = document.form1.hsc_percentage.value;
+      var b_course_nameVal = document.form1.b_course_name.value;
+      var b_universityVal = document.form1.b_university.value;
+      var b_passing_yearVal = document.form1.b_passing_year.value;
+      var b_percentageVal = document.form1.b_percentage.value;
+      var preference_locationVal = document.form1.preference_location.value;
+      var notice_periodVal = document.form1.notice_period.value;
+      var expected_ctcVal = document.form1.expected_ctc.value;
+      var current_ctcVal = document.form1.current_ctc.value;
+      var departmentVal = document.form1.department.value;
+     
+     
+     if (notNullAllowed(fnameVal,lnameVal,desginationVal,emailVal,phoneVal,date_of_birthVal
+     ,ssc_nameVal,ssc_passing_yearVal,ssc_percentageVal,
+     hsc_nameVal,hsc_passing_yearVal,hsc_percentageVal,
+     b_course_nameVal,b_passing_yearVal,b_percentageVal,b_universityVal,preference_locationVal
+     ,notice_periodVal,expected_ctcVal,current_ctcVal,departmentVal) == false) {
+      return false;
+     }
+     else{
+      return true;
+     }
+      
+    }
+
+    function ValidateEmail(input) {
+    var validRegex =
+      /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+
+    if (!input.match(validRegex)) {
+      var error = document.getElementById('error');
+      error.innerText = "Invalid email address!"
+      document.form1.email.focus();
+      return false;
+    } else {
+      return true;
+    }
+  }
+
+  function ValidateDate(input) {
+    var validRegex = /^\d{4}-\d{2}-\d{2}$/; 
+    
+    if (!input.match(validRegex)) {
+      var error = document.getElementById('error');
+      error.innerText = "Invalid Date Format.. Please follow YYYY-MM-DD Format!"
+      document.form1.date_of_birth.focus();
+      return false;
+    } else {
+      return true;
+    }
+  }
+
+  function ValidatePhone(input) {
+    var validRegex =  /^\+?([0-9]{3})\)?[ -]?([0-9]{3})[ -]?([0-9]{4})$/
+    if (!input.match(validRegex)) {
+      var error = document.getElementById('error');
+      error.innerText = "Please Enter Valid Phone Number like,(9876543210,9876543210,987 654 3210,987-654-3210)!"
+      document.form1.phone_no.focus();
+      return false;
+    } else {
+      return true;
+    }
+  }
+  
+  function notNullAllowed(fnameVal,lnameVal,desginationVal,emailVal,phoneVal,date_of_birthVal
+  ,ssc_nameVal,ssc_passing_yearVal,ssc_percentageVal,
+     hsc_nameVal,hsc_passing_yearVal,hsc_percentageVal,
+     b_course_nameVal,b_passing_yearVal,b_percentageVal,b_universityVal,preference_locationVal
+     ,notice_periodVal,expected_ctcVal,current_ctcVal,departmentVal) {
+  if (fnameVal == null || fnameVal ==""){  
+    var error = document.getElementById('error');
+    error.innerText = "First Name can't be blank!"
+    document.form1.first_name.focus();
+  return false;  
+  }
+  else if (lnameVal == null || lnameVal ==""){  
+    var error = document.getElementById('error');
+    error.innerText = "Last Name can't be blank!"
+    document.form1.last_name.focus();
+  return false;  
+  }
+  else if (desginationVal == null || desginationVal ==""){  
+    var error = document.getElementById('error');
+    error.innerText = "Designation can't be blank!"
+    document.form1.deg1.focus();
+  return false;  
+  }
+  else if (emailVal == null || emailVal ==""){  
+    var error = document.getElementById('error');
+    error.innerText = "Email can't be blank!"
+    document.form1.email.focus();
+  return false;  
+  }
+   else if (ValidateEmail(emailVal) == false) {
+    return false;
+  }
+  else if (phoneVal == null || phoneVal ==""){  
+    var error = document.getElementById('error');
+    error.innerText = "Phone can't be blank!"
+    document.form1.phone_no.focus();  
+  return false;  
+  }
+  else if (ValidatePhone(phoneVal) == false) {
+    return false;
+  }
+  else if (date_of_birthVal == null || date_of_birthVal ==""){  
+    var error = document.getElementById('error');
+    error.innerText = "Date of Birth can't be blank!"
+    document.form1.date_of_birth.focus();  
+  return false;  
+  }
+  else if (ValidateDate(date_of_birthVal) == false) {
+    return false;
+  }
+  else if (ssc_nameVal == null || ssc_nameVal ==""){  
+    var error = document.getElementById('error1');
+    error.innerText = "SSC Details can't be blank!"
+    document.form1.ssc_name.focus();  
+  return false;  
+  }
+  else if (ssc_passing_yearVal == null || ssc_passing_yearVal ==""){  
+    var error = document.getElementById('error1');
+    error.innerText = "SSC Details can't be blank!"
+    document.form1.ssc_passing_year.focus();  
+  return false;  
+  }
+  else if (ssc_percentageVal == null || ssc_percentageVal ==""){  
+    var error = document.getElementById('error1');
+    error.innerText = "SSC Details can't be blank!"
+    document.form1.ssc_percentage.focus();  
+  return false;  
+  }
+  else if (hsc_nameVal == null || hsc_nameVal ==""){  
+    var error = document.getElementById('error1');
+    error.innerText = "HSC Details can't be blank!"
+    document.form1.hsc_name.focus();  
+  return false;  
+  }
+  else if (hsc_passing_yearVal == null || hsc_passing_yearVal ==""){  
+    var error = document.getElementById('error1');
+    error.innerText = "HSC Details can't be blank!"
+    document.form1.hsc_passing_year.focus();  
+  return false;  
+  }
+  else if (hsc_percentageVal == null || hsc_percentageVal ==""){  
+    var error = document.getElementById('error1');
+    error.innerText = "HSC Details can't be blank!"
+    document.form1.hsc_percentage.focus();  
+  return false;  
+  }
+  else if (b_course_nameVal == null || b_course_nameVal ==""){  
+    var error = document.getElementById('error1');
+    error.innerText = "Bechlor Details can't be blank!"
+    document.form1.b_course_name.focus();  
+  return false;  
+  }
+  else if (b_universityVal== null || b_universityVal ==""){  
+    var error = document.getElementById('error1');
+    error.innerText = "Bechlor Details can't be blank!"
+    document.form1.b_university.focus();  
+  return false;  
+  }
+  else if (b_passing_yearVal == null || b_passing_yearVal ==""){  
+    var error = document.getElementById('error1');
+    error.innerText = "Bechlor Details can't be blank!"
+    document.form1.b_passing_year.focus();  
+  return false;  
+  }
+  else if (b_percentageVal == null || b_percentageVal ==""){  
+    var error = document.getElementById('error1');
+    error.innerText = "Bechloer Details can't be blank!"
+    document.form1.b_percentage.focus();  
+  return false;  
+  }
+  else if (preference_locationVal == null || preference_locationVal ==""){  
+    var error = document.getElementById('error2');
+    error.innerText = "Preference Location can't be blank!"
+    document.form1.preference_location.focus();  
+  return false;  
+  }
+  else if (notice_periodVal == null || notice_periodVal ==""){  
+    var error = document.getElementById('error2');
+    error.innerText = "Notice Period can't be blank!"
+    document.form1.notice_period.focus();  
+  return false;  
+  }
+  else if (current_ctcVal == null || current_ctcVal ==""){  
+    var error = document.getElementById('error2');
+    error.innerText = "Current CTC can't be blank!"
+    document.form1.current_ctc.focus();  
+  return false;  
+  }
+  else if (expected_ctcVal == null || expected_ctcVal ==""){  
+    var error = document.getElementById('error2');
+    error.innerText = "Expected CTC can't be blank!"
+    document.form1.expected_ctc.focus();  
+  return false;  
+  }
+  else if (departmentVal == null || departmentVal ==""){  
+    var error = document.getElementById('error2');
+    error.innerText = "Department can't be blank!"
+    document.form1.department.focus();  
+  return false;  
+  }
+  else{
+    return true;
+  }
+  }
+
+    
+  </script>
+    </body>
+    </html>
+    

@@ -47,6 +47,9 @@ app.use('/home', gridsearchRouter)
 var delimRouter = require('./routes/delim/delim');
 app.use('/home', delimRouter)
 
+var simpleformRouter = require('./routes/simpleform/form');
+app.use('/home', simpleformRouter)
+
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, (error) =>{ 
     if(!error) 
