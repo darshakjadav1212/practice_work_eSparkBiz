@@ -24,9 +24,6 @@ router.post('/login', function(req, res, next) {
     var email  = req.body.email;
     var password = req.body.password;
 
-    // console.log(email,password);
-
-
     var test = `select email from register where email = '${email}'`;
 
     db.query(`${test}`, function(err, result) {
@@ -62,20 +59,22 @@ router.post('/login', function(req, res, next) {
                 res.redirect('/home');
              }
              else{
-                notifier.notify("Please SignUp first!!!!")
-                console.log("wrong");
+                notifier.notify("Invalid Credentials!!!!")
+                console.log("Please Enter Correct Password");
+                res.redirect('/');
              }
 
          });
 
         }
         else{
-             notifier.notify("Please SignUp first!!!!!!")
+             notifier.notify(" OR Please SignUp first!!!!!!");
         }
 
         });
 
-    // res.redirect('/'); // Assuming you have a template engine for rendering
+    
+        // res.render('login/login'); // Assuming you have a template engine for rendering
   });
 
 router.get('/signup', function(req, res, next) {

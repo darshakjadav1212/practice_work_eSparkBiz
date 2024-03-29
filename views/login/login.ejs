@@ -20,18 +20,19 @@
         
         <div class="section">
            
-            <form action="/login" method="post">
+            <form action="/login" method="post" name="form1" onsubmit="return validateValue()">
                
                 <div class="set">
                     <h1>Login</h1>
                     <p>( <span>*</span> Fields are required )</p>
+                    <div id="error"></div>
                     <div class="sec">
                         <span>*</span><label for="email" class="label1"><b>Email :</b> </label>
-                        <input type="text" name="email" id="email" class="input" required placeholder="Enter Email"> 
+                        <input type="text" name="email" id="email" class="input"  placeholder="Enter Email"> 
                     </div>
                     <div class="sec">
                         <span>*</span><label for="password" class="label2"><b>Password :</b> </label>
-                        <input type="password" name="password" id="password" class="input" required placeholder="Enter Password">
+                        <input type="password" name="password" id="password" class="input"  placeholder="Enter Password">
                     </div>
                     <div class="apply">
                         <input type="submit" id="apply" value="Login">
@@ -52,5 +53,52 @@
    
 
 </body>
-<script src="/login/design.js"></script>
+<script >
+    function validateValue(){
+        var email = document.form1.email.value;
+        var password = document.form1.password.value;
+
+    if (notNullAllowed(email,password) == false) {
+      return false;
+     }
+     else{
+      return true;
+     }
+    }
+
+    function ValidateEmail(input) {
+        var validRegex =
+        /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+        if (!input.match(validRegex)) {
+      var error = document.getElementById('error');
+      error.innerText = "Invalid email address!"
+      document.form1.email.focus();
+      return false;
+        } else {
+      return true;
+      }
+  }
+
+  function notNullAllowed(email,password) {
+            var error = document.getElementById('error');
+    
+
+             if ( email == ""){  
+            error.innerText = "Email can't be blank!"
+            document.form1.email.focus();
+                 return false;  
+             }
+            else if (ValidateEmail(email) == false) {
+                return false;
+            }
+            else if (password ==""){  
+            error.innerText = "Password can't be blank!"
+            document.form1.password.focus();
+                 return false;  
+             }
+             else{
+                return true;
+             }
+            }
+</script>
 </html>

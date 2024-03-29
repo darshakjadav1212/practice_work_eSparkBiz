@@ -18,28 +18,29 @@
             </div>
 
             <div class="section">
-                <form action="/register" method="post" name="form1">
+                <form action="/register" method="post" name="register" onsubmit="return validateForm()">
                     <div class="set">
                         <h1>Register</h1>
                         <p>( <span>*</span> Fields are required )</p>
+                        <div id="error"></div>
                         <div class="sec">
                             <span>*</span><label for="username" class="label3"><b>User Name : </b></label>
-                            <input type="text" name="username" id="username" class="input" autofocus required placeholder="Enter Username">
+                            <input type="text" name="username" id="username" class="input" autofocus  placeholder="Enter Username">
                         </div>
                         <div class="sec">
                             <span>*</span><label for="email" class="label4"><b>Email : </b></label>
-                            <input type="text" name="email" id="email" class="input" required placeholder="Enter Email">
+                            <input type="text" name="email" id="email" class="input"  placeholder="Enter Email">
                         </div>
                         <div class="sec">
                             <span>*</span><label for="password" class="label5"><b>Password : </b></label>
-                            <input type="password" name="password" id="password" class="input"  required placeholder="Enter Password">
+                            <input type="password" name="password" id="password" class="input"   placeholder="Enter Password">
                         </div>
                         <div class="sec">
                             <span>*</span><label for="confirm_password" class="label6"><b>Confirm <br>Password : </b></label>
-                            <input type="password" name="confirm_password" id="confirm_password" class="input" required placeholder="Enter Confirm Password">
+                            <input type="password" name="confirm_password" id="confirm_password" class="input"  placeholder="Enter Confirm Password">
                         </div>
                         <div class="apply">
-                            <input type="submit" id="apply" value="Sign Up">
+                            <input type="submit" id="apply" class="register" value="Sign Up">
                         </div>
                         <div class="signup">
                             <a href="/">Already have an Account?</a>
@@ -50,6 +51,74 @@
             </div>
         </div>
    
-    <script src="/login/design.js"></script>
+    <script >
+        function validateForm(){
+            var username = document.register.username.value;
+            var email = document.register.email.value;
+            var password = document.register.password.value;
+            var confirm_password = document.register.confirm_password.value;
+
+
+             
+     if (notNullAllowed(username,email,password,confirm_password) == false) {
+      return false;
+     }
+     else{
+      return true;
+     }
+
+
+
+        }
+
+        function ValidateEmail(input) {
+        var validRegex =
+        /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+        if (!input.match(validRegex)) {
+      var error = document.getElementById('error');
+      error.innerText = "Invalid email address!"
+      document.register.email.focus();
+      return false;
+        } else {
+      return true;
+      }
+  }
+       
+
+        function notNullAllowed(username,email,password,confirm_password) {
+            var error = document.getElementById('error');
+
+            if (username == null || username ==""){  
+            error.innerText = "Username can't be blank!"
+            document.register.username.focus();
+                 return false;  
+             }
+            else if (email == null || email ==""){  
+            error.innerText = "Email can't be blank!"
+            document.register.email.focus();
+                 return false;  
+             }
+            else if (ValidateEmail(email) == false) {
+                return false;
+            }
+            else if (password == null || password ==""){  
+            error.innerText = "Password can't be blank!"
+            document.register.password.focus();
+                 return false;  
+             }
+            else if ( confirm_password =="" || confirm_password == null ){  
+            error.innerText = "Confirm Password can't be blank!"
+            document.register.confirm_password.focus();
+                 return false;  
+             }
+             else if (password != confirm_password) {
+                error.innerText = "Password and Confirm Password must be same!";
+                return false;
+             }
+             else{
+                return true;
+             }
+            }
+    </script>
 </body>
 </html>

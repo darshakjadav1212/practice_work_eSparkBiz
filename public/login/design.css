@@ -127,3 +127,9 @@ span{
     margin-top: 50px;
     text-align: center;
 }
+
+#error{
+    color: red;
+    font-size: 1.2em;
+    font-weight: 600;
+}
