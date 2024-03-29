@@ -26,8 +26,8 @@ h1{
 }
 #apply:hover{
     background-color: white;
-    color: rgb(240, 0, 0);
-    border: 5px solid rgb(240,0,0);
+    color: green;
+    border: 5px solid green;
     font-weight: 600;
 }
 span{
@@ -35,7 +35,8 @@ span{
 }
 
 .signup{
-   margin-top: 35px;
+   margin-top: 25px;
+   margin-left: -60px;
    text-align: center;
 }
 .signup a{
@@ -45,23 +46,9 @@ span{
     font-weight: 600;
 }
 .signup a:hover{
-    color: rgb(240, 0, 0);
+    color: green;
 }
 
-.signup1{
-    margin-top: 35px;
-    margin-left: 50px;
-    text-align: center;
- }
- .signup1 a{
-     color: rgb(30, 83, 255);;
-     font-size: 1em;
-     text-decoration: none;
-     font-weight: 600;
- }
- .signup1 a:hover{
-     color: rgb(240, 0, 0);
- }
 
 .main{
     display: flex;
@@ -74,7 +61,7 @@ span{
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    margin-top: -20px;
+    margin-top: -30px;
 }
 
 
@@ -94,12 +81,16 @@ span{
    padding-top: 5px;
    padding-bottom: 5px;
    padding-right: 50px;
+   border: 3px solid rgb(105, 139, 249);
+   background-color: white;
+  font-size: 1em;
+  font-weight: 600;
 }
 
 .label1{
     font-size: 1.1em;
     color: rgb(77, 77, 252);
-    padding-right: 25px;
+    padding-right: 35px;
 }
 
 .label2{
