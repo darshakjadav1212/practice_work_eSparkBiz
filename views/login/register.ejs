@@ -7,33 +7,49 @@
    <link rel="stylesheet" href="/login/design.css">
 </head>
 <body>
-    <h1>Register</h1>
-    <div class="warning">
-        <p>( <span>*</span> Fields are required )</p>
+
+    <div class="title">
+        <h1>DARSHAK JADAV -  20DEV073</h1>
     </div>
-    <div class="section">
-        <form action="/register" method="post" name="form1">
-            <div class="sec">
-                <span>*</span><label for="username">User Name : </label>
-                <input type="text" name="username" id="username" autofocus required>
+    
+        <div class="main1">
+            <div class="photo">
+                <img src="/login/register.svg" alt="pic" height="800px">
             </div>
-            <div class="sec">
-                <span>*</span><label for="email">Email : </label>
-                <input type="text" name="email" id="email" required>
+
+            <div class="section">
+                <form action="/register" method="post" name="form1">
+                    <div class="set">
+                        <h1>Register</h1>
+                        <p>( <span>*</span> Fields are required )</p>
+                        <div class="sec">
+                            <span>*</span><label for="username" class="label3"><b>User Name : </b></label>
+                            <input type="text" name="username" id="username" autofocus required>
+                        </div>
+                        <div class="sec">
+                            <span>*</span><label for="email" class="label4"><b>Email : </b></label>
+                            <input type="text" name="email" id="email" required>
+                        </div>
+                        <div class="sec">
+                            <span>*</span><label for="password" class="label5"><b>Password : </b></label>
+                            <input type="password" name="password" id="password"  required >
+                        </div>
+                        <div class="sec">
+                            <span>*</span><label for="confirm_password" class="label6"><b>Confirm <br>Password : </b></label>
+                            <input type="password" name="confirm_password" id="confirm_password" required>
+                        </div>
+                        <div class="apply">
+                            <input type="submit" id="apply" value="Sign Up">
+                        </div>
+                        <div class="signup1">
+                            <a href="/">Already have an Account?</a>
+                        </div>
+                    </div>
+                   
+                </form>
             </div>
-            <div class="sec">
-                <span>*</span><label for="password">Password : </label>
-                <input type="password" name="password" id="password"  required >
-            </div>
-            <div class="sec">
-                <span>*</span><label for="confirm_password">Confirm Password : </label>
-                <input type="password" name="confirm_password" id="confirm_password" required>
-            </div>
-            <div class="apply">
-                <input type="submit" id="apply" value="Sign Up">
-            </div>
-        </form>
-    </div>
+        </div>
+   
     <script src="/login/design.js"></script>
 </body>
 </html>

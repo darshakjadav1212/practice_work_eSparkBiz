@@ -7,28 +7,50 @@
    <link rel="stylesheet" href="/login/design.css">
 </head>
 <body>
-    <h1>Login</h1>
-    <div class="warning">
-        <p>( <span>*</span> Fields are required )</p>
+    
+    <div class="title">
+        <h1>DARSHAK JADAV -  20DEV073</h1>
     </div>
-    <div class="section">
-        <form action="/login" method="post">
-            <div class="sec">
-                <span>*</span><label for="email">Email : </label>
-                <input type="text" name="email" id="email" autofocus required>
-            </div>
-            <div class="sec">
-                <span>*</span><label for="password">Password : </label>
-                <input type="password" name="password" id="password" required>
-            </div>
-            <div class="apply">
-                <input type="submit" id="apply" value="Login">
-            </div>
-        </form>
+   
+    <div class="main">
+
+        <div class="photo">
+            <img src="/login/login.svg" alt="pic" height="700px">
+        </div>
+        
+        <div class="section">
+           
+            <form action="/login" method="post">
+               
+                <div class="set">
+                    <h1>Login</h1>
+                    <p>( <span>*</span> Fields are required )</p>
+                    <div class="sec">
+                        <span>*</span><label for="email" class="label1"><b>Email :</b> </label>
+                        <input type="text" name="email" id="email" class="input" required placeholder="Enter Email"> 
+                    </div>
+                    <div class="sec">
+                        <span>*</span><label for="password" class="label2"><b>Password :</b> </label>
+                        <input type="password" name="password" id="password" class="input" required placeholder="Enter Password">
+                    </div>
+                    <div class="apply">
+                        <input type="submit" id="apply" value="Login">
+                    </div>
+
+                    <div class="signup">
+                        <a href="/signup">Don't have an Account?</a>
+                    </div>
+
+                </div>
+
+            </form>
+
+        </div>
+
     </div>
-    <div class="signup">
-        <a href="/signup">Sign Up</a>
-    </div>
+    
+   
+
 </body>
 <script src="/login/design.js"></script>
 </html>

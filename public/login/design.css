@@ -1,61 +1,138 @@
 body{
     margin: 0px;
     padding: 0px;
-    background-color: rgb(247, 247, 247);
+    background-color: white;
 }
 
+/* h2{
+    text-align: left;
+} */
+
 h1{
-    text-align: center;
-    
-}
-.section{
-   display: flex;
-   justify-content: center;
-   border: 1px solid black;
-   margin: 0 800px;
-  background-color: rgb(252, 252, 224);
-}
-.sec{
-    padding: 20px;
+    color: rgb(69, 103, 255);
 }
 
 .apply{
-    padding: 20px;
+    margin-top: -10px;
+    padding-left: 110px;
 }
 #apply{
-    padding: 5px 10px;
-    background-color: black;
-    color: greenyellow;
-    border: 1px solid greenyellow;
+    padding: 10px 25px;
+    background-color: rgb(105, 139, 249);
+    color: white;
+    border: 5px solid rgb(246, 163, 163);
     border-radius: 5px;
+    font-weight: 600;
 }
 #apply:hover{
     background-color: white;
     color: rgb(240, 0, 0);
-    border: 1px solid rgb(240,0,0);
+    border: 5px solid rgb(240,0,0);
+    font-weight: 600;
 }
 span{
     color: red;
 }
 
-.warning{
-    margin: 0 800px;
-}
-
 .signup{
-    margin:20px 880px;   
+   margin-top: 35px;
+   text-align: center;
 }
 .signup a{
-    padding: 6px;
-    background-color: black;
-    color: greenyellow;
-    border: 1px solid greenyellow;
-    border-radius: 5px;
-    font-size: 0.9em;
+    color: rgb(30, 83, 255);;
+    font-size: 1em;
     text-decoration: none;
+    font-weight: 600;
 }
 .signup a:hover{
-    background-color: white;
     color: rgb(240, 0, 0);
-    border: 1px solid rgb(240,0,0);
+}
+
+.signup1{
+    margin-top: 35px;
+    margin-left: 50px;
+    text-align: center;
+ }
+ .signup1 a{
+     color: rgb(30, 83, 255);;
+     font-size: 1em;
+     text-decoration: none;
+     font-weight: 600;
+ }
+ .signup1 a:hover{
+     color: rgb(240, 0, 0);
+ }
+
+.main{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 50px;
+}
+
+.main1{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: -20px;
+}
+
+
+.set{
+    text-align: left;
+   margin-top: 150px;
+   padding-right: 150px;
+}
+
+
+.sec{
+   margin-bottom: 50px;
+   margin-top: 50px;
+}
+
+.input{
+   padding-top: 5px;
+   padding-bottom: 5px;
+   padding-right: 50px;
+}
+
+.label1{
+    font-size: 1.1em;
+    color: rgb(77, 77, 252);
+    padding-right: 25px;
+}
+
+.label2{
+    font-size: 1.1em;
+    color: rgb(77, 77, 252);
+    padding-right: 10px;
+}
+
+.label3{
+    font-size: 1.1em;
+    color: rgb(77, 77, 252);
+    padding-right: 10px;
+}
+
+.label4{
+    font-size: 1.1em;
+    color: rgb(77, 77, 252);
+    padding-right: 50px;
+}
+
+.label5{
+    font-size: 1.1em;
+    color: rgb(77, 77, 252);
+    padding-right: 20px;
+}
+
+.label6{
+    font-size: 1.1em;
+    color: rgb(77, 77, 252);
+    padding-right: 30px;
+}
+
+.title{
+    margin-top: 50px;
+    text-align: center;
 }
