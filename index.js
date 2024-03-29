@@ -63,6 +63,9 @@ app.use('/home', simpleformRouter)
 var ajaxformRouter = require('./routes/ajaxform/form');
 app.use('/home', ajaxformRouter)
 
+var logoutRouter = require('./routes/logout/logout');
+app.use('/', logoutRouter)
+
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, (error) =>{ 
     if(!error) 
