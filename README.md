@@ -4,4 +4,8 @@
 <hr>
 <ul>
   <li>HTML5,CSS3,Vanilla JS</li>
+   <li>Node JS</li>
+  <li>Express JS</li>
+  <li>EJS template</li>
+  <li>MySQL</li>
 </ul>
