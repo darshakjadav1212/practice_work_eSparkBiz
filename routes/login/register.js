@@ -54,7 +54,7 @@ router.post('/login', function(req, res, next) {
                     httpOnly:true,
                     secure:true,
                     sameSite:'strict',
-                    expires:new Date(Date.now() + 200000)
+                    expires:new Date(Date.now() + 200000000)
                 })
                 res.redirect('/home');
              }
