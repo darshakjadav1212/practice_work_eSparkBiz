@@ -22,13 +22,13 @@
 <br><br><br>
 <h4>Home Page</h4>
 <image src="screenshot/home.png"/>
-<br>
+<br><br>
 <h2>All Task</h2>
 <hr>
 <br><br>
 <h4>Event Handling</h4>
 <image src="screenshot/eventHandle.png"/>
-<br><br>
+<br>
 <h4>Dynamic Table</h4>
 <image src="screenshot/dynamic_table.png"/>
 <image src="screenshot/home.png"/>
