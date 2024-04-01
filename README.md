@@ -21,7 +21,7 @@
 ![register2](https://github.com/darshakjadav1212/practice_work_eSparkBiz/assets/165070828/c1fb56f9-765e-44b8-ba3f-ba5da0c7a20d)
 <br><br><br>
 <h4>Home Page</h4>
-![home](https://github.com/darshakjadav1212/practice_work_eSparkBiz/assets/165070828/19a37da7-b549-4f9f-9403-3c12404108bd)
+
 
 
 
