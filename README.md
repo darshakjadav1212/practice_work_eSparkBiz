@@ -16,7 +16,9 @@
 <h4><b>Login -Signup</b></h4>
 <image src="screenshot/login.png"/>
 <br><br>
-
+<image src="screenshot/register.png"/>
+<image src="screenshot/register1.png"/>
+<image src="screenshot/register2.png"/>
 <br><br><br>
 <h4>Home Page</h4>
 
