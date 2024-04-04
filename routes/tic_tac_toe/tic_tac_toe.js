@@ -1,9 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const verifyUser = require("../../middleware/authentication");
+const controller = require("../../controllers/tic_tac_toe/tic_tac_toeController")
 
-router.get('/tic_tac_toe',verifyUser,function(req, res, next) {
-  res.render('tic_tac_toe/tic_tac_toe'); // Assuming you have a template engine for rendering
-});
+router.get('/tic_tac_toe',verifyUser,controller.tic_tac_toeController);
 
 module.exports = router;

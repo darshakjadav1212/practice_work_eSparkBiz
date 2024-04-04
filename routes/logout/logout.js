@@ -1,9 +1,7 @@
 const express = require("express");
 const router = express.Router();
+const controller = require("../../controllers/logout/logoutController");
 
-router.get("/logout", function (req, res) {
-  res.clearCookie("token");
-  res.redirect("/"); // Assuming you have a template engine for rendering
-});
+router.get("/logout", controller.logOutController);
 
 module.exports = router;

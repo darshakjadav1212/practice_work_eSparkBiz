@@ -20,4 +20,5 @@ let con = mysql.createConnection({
     console.log("Connection with mysql established");
   });
   
+  
 module.exports=con;

@@ -1,9 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const verifyUser = require("../../middleware/authentication");
+const controller = require("../../controllers/dynamic_table/dynamic_tableController")
 
-router.get('/dynamic', verifyUser,function(req, res, next) {
-  res.render('dynamic_table/dynamic_table'); // Assuming you have a template engine for rendering
-});
+router.get('/dynamic', verifyUser,controller.dynamicTableController);
 
 module.exports = router;
